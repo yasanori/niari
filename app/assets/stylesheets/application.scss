@@ -1,4 +1,28 @@
+@import "normalize";
 @import "bootstrap";
+@import "modules/header";
+@import "modules/memories";
+
+html {
+  font-size: 62.5%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+body {
+  color: #fff;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family:'Josefin Slab', "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+}
 
 .container-login {
   @extend .container-fluid;
@@ -6,7 +30,6 @@
   padding: 2rem;
 }
 
-// 「ログインしました」などのフラッシュ用スタイル
 
 .alert-notice {
   @extend .alert-info;

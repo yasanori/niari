@@ -1,7 +1,9 @@
 %body
-  %header
+  %header.header
     %nav.navbar.navbar-expand.navbar-light
-      = link_to "niari", root_path, class: 'navbar-brand'
+      .navbar__left
+        = link_to "niari", root_path, class: 'navbar-brand'
+        = link_to "検索", users_path, class: 'search-gate'
       #Navber
         %ul.navbar-nav
           - if user_signed_in?
