@@ -1,0 +1,28 @@
+
+
+.camera_link {
+  .camera_box {
+    width: 50%;
+    padding: 5px;
+    margin: 20px auto;
+    display: flex;
+    // justify-content: space-around;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    .mini-prf-image-box {
+      width: 30%;
+      margin: 5px;
+      .mini-prf-image {
+        widows: 100%;
+        border-radius: 10px;
+      }
+    }
+    .camera_name {
+      font-size: 2.5rem;
+      color: #ffffff;
+    }
+  }
+  .camera_box:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}

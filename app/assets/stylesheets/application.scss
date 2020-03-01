@@ -1,4 +1,59 @@
+@import "normalize";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "modules/header";
+@import "modules/memories";
+@import "modules/users_index";
+
+html {
+  font-size: 62.5%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+body {
+  color: #fff;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family:'Josefin Slab', "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+}
+
+.contents {
+  padding: 40px;
+  a {
+    text-decoration: none;
+  }
+}
+
+.heading {
+  position: relative;
+  display: inline-block;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  padding-bottom: 8px;
+}
+.heading::before,
+.heading::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom:1px solid #cccccc ;
+}
+
+.heading::before {
+  bottom: 5px;
+}
 
 .container-login {
   @extend .container-fluid;
@@ -6,12 +61,23 @@
   padding: 2rem;
 }
 
-// 「ログインしました」などのフラッシュ用スタイル
 
 .alert-notice {
-  @extend .alert-info;
+  // @extend .alert-info;
+  background: rgba(255, 255, 255, 0.2);
+  width: 40%;
+  margin: 0 auto;
+  .close {
+    color: #fff;
+  }
 }
 
 .alert-alert {
-  @extend .alert-danger;
+  // @extend .alert-danger;
+  background: rgba(255, 255, 255, 0.2);
+  width: 40%;
+  margin: 0 auto;
+  .close {
+    color: #fff;
+  }
 }

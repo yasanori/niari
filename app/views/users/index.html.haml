@@ -1,0 +1,10 @@
+%h2.heading
+  Photographer
+
+- @cameraman.each do |camera|
+  = link_to user_path(camera.id), class: "camera_link" do
+    .camera_box
+      .mini-prf-image-box
+        = image_tag camera.image.url, class: 'mini-prf-image' if camera.image.present?
+      %p.camera_name
+        = camera.name
