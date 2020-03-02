@@ -36,6 +36,65 @@
       }
     }
     #Navber {
+      .nav-name-post {
+        display: flex;
+        padding: 10px;
+        span {
+          margin-right: 15px;
+          font-size: 1.5rem;
+          cursor: pointer;
+          position: relative;
+          &:after {
+            content: '▼';
+            font-size: .7em;
+            margin-left: 5px;
+          }
+          &:hover .my-lists {
+            color: #ffffff;
+            display: block;
+          }
+        }
+        span:hover {
+          color: rgba( 255, 255, 255, 0.6);
+        }
+        .my-lists {
+          display: none;
+          width: 150px;
+          position: absolute;
+          list-style: none;
+          top: 20px;
+          right: 0;
+          border-left: 1px solid #d8d8d8;
+          border-right: 1px solid #d8d8d8;
+          box-shadow: 1px 2px 5px rgba(0,0,0,0.1);
+          margin: 0;
+          padding: 0;
+          .my-list {
+            background-color: #dddddd;
+            font-size: 1.5rem;
+            a {
+              display: block;
+              padding: 10px 20px;
+              text-align: left;
+              text-decoration: none;
+              border-bottom: 1px solid #d8d8d8;
+              color: #000000;
+            }
+            a:hover {
+              color: blue;
+            }
+          }
+        }
+        .post-photo {
+          display: inline-block;
+          color: #ffffff;
+          font-size: 1.5rem;
+          text-decoration: none;
+        }
+        .post-photo:hover {
+          color: rgba( 255, 255, 255, 0.6);
+        }
+      }
       .navbar-nav li .nav-link {
         color: white;
         font-size: 1.5rem;

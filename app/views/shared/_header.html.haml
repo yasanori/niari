@@ -5,13 +5,18 @@
         = link_to "niari", root_path, class: 'navbar-brand'
         = link_to "検索", users_path, class: 'search-gate'
       #Navber
-        %ul.navbar-nav
-          - if user_signed_in?
-            %li.nav-item.active
-              = link_to 'アカウント編集', edit_user_registration_path, class: 'nav-link'
-            %li.nav-item.active
-              = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link'
-          - else
+        - if user_signed_in?
+          .nav-name-post
+            %span<
+              = current_user.name
+              %ul.my-lists><
+                %li.my-list><
+                  = link_to "マイページ", user_path(current_user)
+                  = link_to "アカウント編集", edit_user_registration_path
+                  = link_to "ログアウト", destroy_user_session_path, method: :delete
+            = link_to "投稿する", new_memory_path, class: "post-photo"
+        - else
+          %ul.navbar-nav
             %li.nav-item.active
               = link_to "新規登録", new_user_registration_path, class: 'nav-link'
             %li.nav-item.active

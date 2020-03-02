@@ -1,0 +1,23 @@
+.prf-top-contents
+  .main-content
+    .main-content__img
+      -  if @user.image.present?
+        = image_tag @user.image.url, class: 'main-prf-image'
+      - else
+        = image_tag 'nofoto.jpg', class: 'main-prf-image'
+    .main-content__prf
+      %h2.prf-user-name
+        = @user.name
+      .prf-user-text
+        = @user.profile
+    .main-content-btns
+      = link_to 'フォロー', '#', class: 'prf-btn'
+      = link_to '依頼', '#', class: 'prf-btn'
+      = link_to 'DM', '#', class: 'prf-btn'
+.prf-bottom-contents
+  %h2.sub-text
+    Memories
+  .memories-box
+    - @memories.each do |memory|
+      .memory-box
+        = image_tag memory.photo.url, class: 'main-box__date'
