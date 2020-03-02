@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @photos = @user.photos
+    @memories = @user.memories.order(updated_at: :desc).limit(5)
   end
 
 end

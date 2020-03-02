@@ -5,6 +5,9 @@
   = link_to user_path(camera.id), class: "camera_link" do
     .camera_box
       .mini-prf-image-box
-        = image_tag camera.image.url, class: 'mini-prf-image' if camera.image.present?
+        - if camera.image.present?
+          = image_tag camera.image.url, class: 'mini-prf-image'
+        - else
+          = image_tag 'nofoto.jpg', class: 'mini-prf-image'
       %p.camera_name
         = camera.name

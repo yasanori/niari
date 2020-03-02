@@ -1,0 +1,8 @@
+%h2.heading
+  New Post
+.new-post
+  = form_with(model: @memory, local: true) do |form|
+    = form.label :photo, class: 'form__box__image' do
+      = icon('fas', 'image', class: 'photo-icon')
+      = form.file_field :photo, class: 'hidden'
+    = form.submit 'SEND'
