@@ -1,2 +1,33 @@
-%h1 Rooms#show
-%p Find me in app/views/rooms/show.html.haml
+.page_title
+  %h2.heading
+    Direct Message
+  %p.dm_name
+    - @entries.each do |entry|
+      = entry.user.name unless entry.user.name == current_user.name
+
+.dm_contents
+  .messages
+    - if @messages.present?
+      - @messages.each do |message|
+        -if message.user_id == current_user.id
+          .my_message.message
+            .message__user_name
+              = link_to user_path(message.user_id) do
+                = message.user.name
+            .message__text
+              = message.text
+        - else
+          .message
+            .message__user_name
+              = link_to user_path(message.user_id) do
+                = message.user.name
+            .message__text
+              = message.text
+    - else
+      %p.no_text
+        メッセージはまだありません
+  .form
+    = form_with(model: @message, local: true, class: "dm_form") do |f|
+      = f.text_area :text, lows: "3", class: "dm_form__text"
+      = f.hidden_field :room_id, value: @room.id
+      = f.submit "SEND", class: "dm_form__btn"
