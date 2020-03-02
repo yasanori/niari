@@ -10,13 +10,20 @@
         = @user.name
       .prf-user-text
         = @user.profile
-    .main-content-btns
-      = link_to 'フォロー', '#', class: 'prf-btn'
-      = link_to '依頼', '#', class: 'prf-btn'
-      = link_to 'DM', '#', class: 'prf-btn'
+    .main-content__btns
+      - if @user.id == current_user.id
+      -else
+        = link_to 'フォロー', '#', class: 'prf-btn'
+        = link_to '依頼', '#', class: 'prf-btn'
+        - if @isRoom == true
+          = link_to "DM", room_path(@roomId), class: 'prf-btn'
+        - else
+          = form_with(model: @room, local: true) do |f|
+            = f.fields_for @entry do |e|
+              = e.hidden_field :user_id, value: @user.id
+            = f.submit "DM", class: 'prf-btn'
 .prf-bottom-contents
-  %h2.sub-text
-    Memories
+  = link_to 'Memories', '#', class: 'sub-text'
   .memories-box
     - @memories.each do |memory|
       .memory-box
