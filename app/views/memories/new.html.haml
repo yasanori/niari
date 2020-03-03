@@ -1,8 +1,24 @@
 %h2.heading
   New Post
 .new-post
-  = form_with(model: @memory, local: true) do |f|
-    = f.label :photo, class: 'form__box__image' do
-      = icon('fas', 'image', class: 'photo-icon')
-      = f.file_field :photo, class: 'hidden'
-    = f.submit 'SEND'
+  .image_form
+    = form_with(model: @memory, local: true) do |f|
+      = f.label :photo, class: 'image_label' do
+        = icon('fas', 'image', class: 'photo-icon')
+        = f.file_field :photo, class: 'image_form__content'
+      = f.submit 'SEND'
+
+
+-# %h2.heading
+-#   New Post
+-# .new-post
+-#   .image_form
+-#     = form_with(model: @memory, local: true) do |f|
+-#       = f.label :photo, class: 'image_label' do
+-#         .preview_image
+-#           - if @memory.photo.url.present?
+-#             = image_tag @memory.photo.url
+-#           - else
+-#             = icon('fas', 'image', class: 'photo-icon')
+-#         = f.file_field :photo, id: "post_file", class: 'image_form__content'
+-#       = f.submit 'SEND'
