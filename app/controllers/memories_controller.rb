@@ -1,5 +1,6 @@
 class MemoriesController < ApplicationController
   def index
+    @memories = Memory.order(updated_at: :desc).limit(10)
   end
 
   def new

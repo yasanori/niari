@@ -1,3 +1,7 @@
-
--# .top_page
--#   = image_tag 'film-1668918_1920.jpg', class: 'main_image'
+%h1.site_title
+  niari
+.top_page
+  %ul.loop_slider
+    - @memories.each do |memory|
+      %li.loop_slider__contents
+        = image_tag memory.photo.url, class: "loop_image"

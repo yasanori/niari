@@ -1,0 +1,49 @@
+
+.site_title {
+  font-size: 12rem;
+  text-shadow:  5px 5px 15px #dddddd;
+  letter-spacing: 3px;
+  margin-bottom: 100px;
+}
+
+.top_page {
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.loop_slider {
+    float: left;
+    display: inline;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.loop_slider__contents {
+    float: left;
+    display: inline;
+    overflow: hidden;
+    margin: 0;
+}
+
+.loop_image {
+  width: 500px;
+  height: auto;
+  padding: 15px;
+  box-shadow: 0 0 20px #ffffff inset;
+}
+
+.loop_slider:after {
+    content: ".";
+    height: 0;
+    clear: both;
+    display: block;
+    visibility: hidden;
+}
+
+.top_page ul {
+    display: inline-block;
+    overflow: hidden;
+}
