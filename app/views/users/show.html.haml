@@ -13,7 +13,8 @@
     .main-content__btns
       - if @user.id == current_user.id
       -else
-        = link_to 'フォロー', '#', class: 'prf-btn'
+        - if current_user.id != @user.id
+          = render 'shared/follow_form'
         = link_to '依頼', '#', class: 'prf-btn'
         - if @isRoom == true
           = link_to "DM", room_path(@roomId), class: 'prf-btn'
@@ -22,9 +23,14 @@
             = f.fields_for @entry do |e|
               = e.hidden_field :user_id, value: @user.id
             = f.submit "DM", class: 'prf-btn'
+    .follow_contents
+      .follow_content
+        = link_to "Follow #{@user.follow_count}", {controller: :users, action: :follow_list, user_id: @user.id}, class: "follow_list_btn", method: :get
+      .follower_content
+        = link_to "Follower #{@user.followers_count} ", {controller: :users,action: :follower_list, user_id: @user.id}, class: "follower_list_btn", method: :get
 .prf-bottom-contents
   = link_to 'Memories', '#', class: 'sub-text'
   .memories-box
     - @memories.each do |memory|
       .memory-box
-        = image_tag memory.photo.url, class: 'main-box__date'
+        = image_tag memory.photo.url, class: 'memory-box__date'

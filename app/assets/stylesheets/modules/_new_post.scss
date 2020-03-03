@@ -1,4 +1,86 @@
-.post_image {
-  width: 400px;
-  height: auto;
+// .follow_contents
+//       = @user.follow_count do
+//         = link_to "フォロー", {controller: :users, action: :follow_list_user, user_id: @user_id}, class: "follow_list_btn", method: :get
+//       = @user.followers_count do
+//         = link_to "フォロワー", {controller: :users,action: :follower_list,user_id: @user.id}, class: "follower_list_btn" method: :get
+//       - if current_user.id != @user.id
+//         = render 'shared/follow_form'
+
+.follow_contents {
+  display: flex;
+  justify-content: space-around;
+  width: 25%;
+  color: #ffffff;
+  margin: 0 auto;
+  .follow_content,
+  .follower_content {
+    background: rgba(119, 119, 119, 0.6);
+    width: 40%;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6)inset;
+    .follow_list_btn,
+    .follower_list_btn {
+      color: #ffffff;
+      text-decoration: none;
+    }
+  }
+  .follow_content {
+    margin-right: 10px;
+  }
+  .follow_content:hover,
+  .follower_content:hover {
+    background-color: rgba(1255, 255, 255, 0.3);
+  }
 }
+.follow_user {
+  width: 35%;
+  color: #ffffff;
+  margin: 10px auto 0;
+  padding: 5px 30px;
+  display: flex;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  &__link {
+    text-decoration: none;
+    &__name {
+      color: #ffffff;
+      font-size: 2rem;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+    &__name:hover {
+      color: rgba(255, 255, 255, 0.2);
+    }
+  }
+  &__btn {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    padding: 3px 10px;
+    border-radius: 10px;
+    .prf-btn {
+      color: #ffffff;
+      font-size: 1.4rem;
+      text-decoration: none;
+    }
+  }
+  &__btn:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+
+
+// - @user.followers.each do |user|
+//   .follow_user
+//     = link_to user_path(user), class: 'follower_link' do
+//       .follow_user__name
+//         = user.name
+//     .follow_user__btn
+//       - if current_user.id == @user.id
+//         - if current_user.following? user
+//           = link_to "UnFollow", {controller: :users,action: :unfollow,user_id: @user.id}, class: "prf-btn", method: :put
+//         - else
+//           = link_to "Follow", {controller: :users, action: :follow, user_id: @user.id}, class: "prf-btn", method: :put

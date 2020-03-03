@@ -9,6 +9,9 @@ class User < ApplicationRecord
   has_many :memories, dependent: :destroy
   has_many :messages, dependent: :destroy
 
+  acts_as_followable
+  acts_as_follower
+
   validates :profile, length: { maximum: 200 }
   mount_uploader :image, ImageUploader
 end
