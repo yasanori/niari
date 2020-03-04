@@ -1,0 +1,9 @@
+
+.heading
+  = link_to "#{@user.name}", user_path(@user), class: "user_link"
+  = "'s memories"
+
+.colections
+  - @memories.each do |memory|
+    .colection
+      = image_tag memory.photo.url

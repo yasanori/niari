@@ -69,7 +69,8 @@
 
 .prf-bottom-contents {
   background: rgba(200, 200, 200, 0.8);
-  max-height: 300px;
+  max-height: 100%;
+  max-height: 100%;
   padding: 25px;
   margin: 15px auto 0;
   display: inline-block;
@@ -106,10 +107,13 @@
       display: table-cell;
       box-shadow: 0 0 10px #808080 inset;
       padding: 8px;
+      max-width: 100%;
+      max-height: auto;
       &__date {
         object-fit: cover;
-        max-width: 100%;
         height: auto;
+        max-width: 200px;
+        max-height: 150px;
       }
     }
   }

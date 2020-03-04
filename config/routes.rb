@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
   root 'memories#index'
   resources :memories
-  resources :users, only: [:index, :show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update] do
+    member do
+      get 'colection'
+    end
+  end
   resources :rooms, only: [:index ,:create, :show]
   resources :messages, only: :create
 

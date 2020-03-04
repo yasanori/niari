@@ -3,7 +3,7 @@
     Direct Message
   %p.dm_name
     - @entries.each do |entry|
-      = entry.user.name unless entry.user.name == current_user.name
+      = link_to "#{entry.user.name}", user_path(entry.user_id), class: "user_link" unless entry.user.name == current_user.name
 
 .dm_contents
   .messages

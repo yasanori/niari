@@ -27,10 +27,10 @@ $(document).on('turbolinks:load', function () {
 
       function loopsliderPosition() {
         $('.top_page_wrap').css({ left: '0' });
-        $('.top_page_wrap').stop().animate({ left: '-' + (loopWidth) + 'px' }, 25000, 'linear');
+        $('.top_page_wrap').stop().animate({ left: '-' + (loopWidth) + 'px' }, 30000, 'linear');
         setTimeout(function () {
           loopsliderPosition();
-        }, 25000);
+        }, 30000);
       };
 
       $('.top_page_wrap ul').clone().appendTo('.top_page_wrap');
