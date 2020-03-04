@@ -29,7 +29,7 @@
       .follower_content
         = link_to "Follower #{@user.followers_count} ", {controller: :users,action: :follower_list, user_id: @user.id}, class: "follower_list_btn", method: :get
 .prf-bottom-contents
-  = link_to 'Memories', '#', class: 'sub-text'
+  = link_to 'Memories', colection_user_path(@user), class: 'sub-text'
   .memories-box
     - @memories.each do |memory|
       .memory-box

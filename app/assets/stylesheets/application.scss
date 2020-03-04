@@ -9,6 +9,7 @@
 @import "modules/users_show";
 @import "modules/dm";
 @import "modules/new_post";
+@import "modules/colection";
 
 html {
   font-size: 62.5%;
@@ -28,11 +29,13 @@ body {
 
 .wrapper {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
 }
 
 .contents {
   padding: 40px 40px 10px;
+  height: calc(100% - 80px);
+  widows: 100%;
   a {
     text-decoration: none;
   }

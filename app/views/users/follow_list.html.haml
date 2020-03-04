@@ -1,7 +1,9 @@
-%h2.heading
-  = "#{@user.name}'s follow"
 
-- @user.followers.each do |user|
+.heading
+  = link_to "#{@user.name}", user_path(@user), class: "user_link"
+  = "'s follow"
+
+- @user.all_following.each do |user|
   .follow_user
     = link_to user_path(user), class: 'follow_user__link' do
       .follow_user__link__name
