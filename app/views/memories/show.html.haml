@@ -1,0 +1,9 @@
+.preview_contents
+  .heading.block
+    = link_to "Colections list", colection_user_path(@memory.user_id)
+  .preview_content
+    .preview_content__memory
+      = image_tag @memory.photo.url
+  - if current_user.id == @memory.user_id
+    .memory_delete
+      = link_to "Delete", memory_path(@memory), method: :delete, class: "memory_delete__btn"

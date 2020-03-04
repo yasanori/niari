@@ -63,17 +63,3 @@
     background-color: rgba(0, 0, 0, 0.5);
   }
 }
-
-
-
-// - @user.followers.each do |user|
-//   .follow_user
-//     = link_to user_path(user), class: 'follower_link' do
-//       .follow_user__name
-//         = user.name
-//     .follow_user__btn
-//       - if current_user.id == @user.id
-//         - if current_user.following? user
-//           = link_to "UnFollow", {controller: :users,action: :unfollow,user_id: @user.id}, class: "prf-btn", method: :put
-//         - else
-//           = link_to "Follow", {controller: :users, action: :follow, user_id: @user.id}, class: "prf-btn", method: :put

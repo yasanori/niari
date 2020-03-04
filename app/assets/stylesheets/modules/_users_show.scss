@@ -98,6 +98,9 @@
   .sub-text::before {
     bottom: 3px;
   }
+  .sub-text:hover {
+    color: rgba(0, 0, 0, 0.4);
+  }
   .memories-box {
     display: table;
     max-width: 100%;

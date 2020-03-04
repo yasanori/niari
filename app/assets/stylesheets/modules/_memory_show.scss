@@ -1,0 +1,32 @@
+
+.preview_contents {
+  .heading.block a {
+    color: #ffffff;
+    display: block;
+  }
+  .heading.block a:hover {
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .preview_content {
+    &__memory {
+      padding: 40px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.6)inset;
+      display: inline-block;
+      margin: 30px auto;
+    }
+  }
+  .memory_delete {
+    margin: 30px auto;
+    &__btn {
+      color: #ffffff;
+      text-decoration: none;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.2);
+      width: 100px;
+      border-radius: 10px;
+    }
+    &__btn:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
