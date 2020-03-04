@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   # before_action :authenticate_user!, :only => [:show]
   def index
-    @cameraman = User.all
+    @cameraman = User.where(camera_id: 1).page(params[:page]).per(20)
   end
 
   def show

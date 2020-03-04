@@ -5,11 +5,13 @@
 @import "modules/header";
 @import "modules/top_page";
 @import "modules/memories";
+@import "modules/memory_show";
 @import "modules/users_index";
 @import "modules/users_show";
 @import "modules/dm";
-@import "modules/new_post";
+@import "modules/follow_list";
 @import "modules/colection";
+@import "modules/profile_edit";
 
 html {
   font-size: 62.5%;

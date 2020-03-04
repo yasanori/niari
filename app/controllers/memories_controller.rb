@@ -3,6 +3,15 @@ class MemoriesController < ApplicationController
     @memories = Memory.order(updated_at: :desc).limit(10)
   end
 
+  def show
+    @memory = Memory.find(params[:id])
+  end
+
+  def destroy
+    @memory = Memory.find(params[:id])
+    @memory.destroy
+  end
+
   def new
     @memory = Memory.new
   end

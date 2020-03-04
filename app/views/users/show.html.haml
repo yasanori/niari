@@ -15,7 +15,7 @@
       -else
         - if current_user.id != @user.id
           = render 'shared/follow_form'
-        = link_to '依頼', '#', class: 'prf-btn'
+        = link_to 'ただのボタン', '#', class: 'prf-btn'
         - if @isRoom == true
           = link_to "DM", room_path(@roomId), class: 'prf-btn'
         - else
