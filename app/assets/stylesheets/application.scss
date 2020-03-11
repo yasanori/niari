@@ -12,6 +12,8 @@
 @import "modules/follow_list";
 @import "modules/colection";
 @import "modules/profile_edit";
+@import "modules/search";
+@import "modules/new_post";
 
 html {
   font-size: 62.5%;
@@ -72,7 +74,6 @@ body {
 
 
 .alert-notice {
-  // @extend .alert-info;
   background: rgba(255, 255, 255, 0.2);
   width: 40%;
   margin: 0 auto;
@@ -89,4 +90,11 @@ body {
   .close {
     color: #fff;
   }
+}
+
+
+@media (max-width:599px){
+.wrapper {
+
+}
 }

@@ -8,6 +8,8 @@
 
 .top_page {
     margin: 0 auto;
+    max-height: 100%;
+    height: 500px;
     text-align: left;
     position: relative;
     overflow: hidden;
@@ -46,4 +48,17 @@
 .top_page ul {
     display: inline-block;
     overflow: hidden;
+}
+
+
+@media (max-width:599px){
+
+.top_page {
+    height: 250px;
+}
+
+.loop_image {
+  width: 250px;
+}
+
 }

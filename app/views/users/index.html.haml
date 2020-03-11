@@ -1,14 +1,15 @@
 %h2.heading
   Photographer
 
-- @cameraman.each do |camera|
-  = link_to user_path(camera.id), class: "camera_link" do
-    .camera_box
-      .mini-prf-image-box
-        - if camera.image.present?
-          = image_tag camera.image.url, class: 'mini-prf-image'
-        - else
-          = image_tag 'nofoto.jpg', class: 'mini-prf-image'
-      %p.camera_name
-        = camera.name
-= paginate @cameraman
+= form_with(url: users_searches_path, local: true, method: :get, class: "search_form") do |f|
+  = f.text_field :keyword, placeholder: "Name", class: "search_input"
+.camera_boxes
+  - @users.each do |user|
+    - if current_user.id != user.id
+      = link_to user_path(user.id), class: "camera_link" do
+        .camera_box
+          .mini-prf-image-box
+            = image_tag user.image.url, class: 'mini-prf-image'
+          %p.camera_name
+            = user.name
+= paginate @users

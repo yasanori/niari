@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 
   root 'memories#index'
   resources :memories
+  namespace :users do
+    resources :searches, only: :index
+  end
+
   resources :users, only: [:index, :show, :edit, :update] do
     member do
       get 'colection'
