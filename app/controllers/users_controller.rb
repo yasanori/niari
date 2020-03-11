@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  # before_action :authenticate_user!, :only => [:show]
+  before_action :authenticate_user!, :only => [:index , :show, :follow, :unfollow]
+
   def index
     @users = User.where(camera_id: 1).page(params[:page]).per(15)
   end
