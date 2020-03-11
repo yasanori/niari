@@ -1,0 +1,14 @@
+%h2.heading
+  Photographer
+
+= form_with(url: users_searches_path, local: true, method: :get, class: "search_form") do |f|
+  = f.text_field :keyword, placeholder: "Name", class: "search_input"
+  -# = f.submit "Search", class: "search_btn"
+.camera_boxes
+  - @users.each do |user|
+    = link_to user_path(user.id), class: "camera_link" do
+      .camera_box
+        .mini-prf-image-box
+          = image_tag user.image.url, class: 'mini-prf-image'
+        %p.camera_name
+          = user.name

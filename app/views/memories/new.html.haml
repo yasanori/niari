@@ -1,12 +1,12 @@
 %h2.heading
   New Post
-.new-post
+.new_post
   .image_form
     = form_with(model: @memory, local: true) do |f|
       = f.label :photo, class: 'image_label' do
         = icon('fas', 'image', class: 'photo-icon')
         = f.file_field :photo, class: 'image_form__content'
-      = f.submit 'SEND'
+      = f.submit 'SEND', class: "post_btn"
 
 
 -# %h2.heading

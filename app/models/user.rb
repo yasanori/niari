@@ -12,6 +12,11 @@ class User < ApplicationRecord
   acts_as_followable
   acts_as_follower
 
+  def self.search(search)
+    return Users..where(camera_id: 1).page(params[:page]).per(15) unless search
+    User.where('name LIKE(?)', "%#{search}%")
+  end
+
   validates :profile, length: { maximum: 200 }
   mount_uploader :image, ImageUploader
 end

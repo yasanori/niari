@@ -40,7 +40,7 @@
       margin: 15px auto;
       border-collapse: separate;
       border-spacing: 20px 10px;
-      width: 60%;
+      width: 45%;
       .prf-btn {
         display: table-cell;
         color: rgba(255, 255, 255, 0.8);
@@ -55,6 +55,110 @@
       }
       form {
         display: table-cell;
+        border: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        .prf-btn {
+          border: none;
+          background-color: transparent;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.prf-bottom-contents {
+  background: rgba(200, 200, 200, 0.8);
+  max-height: 100%;
+  max-height: 100%;
+  padding: 15px;
+  margin: 15px auto 0;
+  display: inline-block;
+  border-radius: 10px;
+  .sub-text {
+    color: #000000;
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+    text-shadow:  3px 3px 7px #808080;
+    font-weight: bold;
+    position: relative;
+    display: inline;
+    padding-bottom: 5px;
+  }
+  .sub-text::before,
+  .sub-text::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom:1px solid #dddddd;
+  }
+
+  .sub-text::before {
+    bottom: 3px;
+  }
+  .sub-text:hover {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  .memories-box {
+    display: table;
+    max-width: 100%;
+    border-collapse: separate;
+    border-spacing: 25px 10px;
+    .memory-box {
+      display: table-cell;
+      box-shadow: 0 0 10px #808080 inset;
+      padding: 8px;
+      max-width: 100%;
+      max-height: auto;
+      &__date {
+        object-fit: cover;
+        height: auto;
+        max-width: 200px;
+        max-height: 150px;
+      }
+    }
+  }
+}
+
+@media (max-width:599px){
+
+.prf-top-contents{
+  .main-content {
+    &__img {
+      .main-prf-image {
+        width: 150px;
+        height: 100px;
+      }
+    }
+    &__prf {
+      .prf-user-name {
+        font-size: 4rem;
+        letter-spacing: 2px;
+        margin: 20px auto;
+        text-shadow: 3px 3px 8px #dddddd;
+      }
+      .prf-user-text {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        line-height: 20px;
+        max-width: 400px;
+        padding: 10px;
+      }
+    }
+    &__btns {
+      margin: 15px auto;
+      width: 50%;
+      .prf-btn {
+        // display: block;
+        margin-top: 10px;
+        font-size: 1rem;
+      }
+      .prf-btn:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+      form {
         border: #fff;
         border: 1px solid rgba(255, 255, 255, 0.8);
         .prf-btn {
@@ -102,22 +206,7 @@
     color: rgba(0, 0, 0, 0.4);
   }
   .memories-box {
-    display: table;
-    max-width: 100%;
-    border-collapse: separate;
-    border-spacing: 25px 10px;
-    .memory-box {
-      display: table-cell;
-      box-shadow: 0 0 10px #808080 inset;
-      padding: 8px;
-      max-width: 100%;
-      max-height: auto;
-      &__date {
-        object-fit: cover;
-        height: auto;
-        max-width: 200px;
-        max-height: 150px;
-      }
-    }
+    display: none;
   }
+}
 }

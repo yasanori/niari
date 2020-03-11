@@ -63,3 +63,36 @@
     background-color: rgba(0, 0, 0, 0.5);
   }
 }
+
+
+@media (max-width:599px){
+
+.follow_contents {
+  width: 45%;
+  .follow_content,
+  .follower_content {
+    .follow_list_btn,
+    .follower_list_btn {
+    }
+  }
+  .follow_content {
+  }
+  .follow_content:hover,
+  .follower_content:hover {
+  }
+}
+.follow_user {
+  &__link {
+    &__name {
+    }
+    &__name:hover {
+    }
+  }
+  &__btn {
+    .prf-btn {
+    }
+  }
+  &__btn:hover {
+  }
+}
+}
