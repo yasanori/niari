@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_073824) do
+ActiveRecord::Schema.define(version: 2020_03_14_043838) do
 
   create_table "entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -53,6 +53,12 @@ ActiveRecord::Schema.define(version: 2020_03_03_073824) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -70,8 +76,10 @@ ActiveRecord::Schema.define(version: 2020_03_03_073824) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "camera_id", default: 2
+    t.bigint "prefecture_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name", unique: true
+    t.index ["prefecture_id"], name: "index_users_on_prefecture_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -80,4 +88,5 @@ ActiveRecord::Schema.define(version: 2020_03_03_073824) do
   add_foreign_key "memories", "users"
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "users", "prefectures"
 end
