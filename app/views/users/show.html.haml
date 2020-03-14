@@ -8,6 +8,8 @@
     .main-content__prf
       %h2.prf-user-name
         = @user.name
+      %p.user_pre
+        = "[ #{@user.prefecture.name} ]"
       .prf-user-text
         = @user.profile
     .main-content__btns
