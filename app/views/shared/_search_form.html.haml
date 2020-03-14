@@ -1,0 +1,3 @@
+= form_with(url: users_searches_path, local: true, method: :get, class: "search_form") do |f|
+  = f.text_field :keyword, placeholder: "Name", class: "search_input"
+  = f.collection_select :prefecture, Prefecture.all,:id, :name, include_blank: '〜 活動拠点 〜', class: "search_select"

@@ -14,7 +14,7 @@ class User < ApplicationRecord
   acts_as_follower
 
   def self.search(search)
-    return Users..where(camera_id: 1).page(params[:page]).per(15) unless search
+    return Users.all unless search
     User.where('name LIKE(?)', "%#{search}%")
   end
 

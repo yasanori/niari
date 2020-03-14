@@ -1,8 +1,7 @@
 %h2.heading
   Photographer
 
-= form_with(url: users_searches_path, local: true, method: :get, class: "search_form") do |f|
-  = f.text_field :keyword, placeholder: "Name", class: "search_input"
+-# = render partial: '/shared/search_form'
 .camera_boxes
   - @users.each do |user|
     - if current_user.id != user.id
@@ -13,7 +12,7 @@
           %p.camera_name
             = user.name
 
-  - if @outher_users.present?
+  - if @users.length == 0
     その場所を拠点としている人はいませんでした
     - @outher_users.each do |user|
       - if current_user.id != user.id
@@ -23,4 +22,5 @@
               = image_tag user.image.url, class: 'mini-prf-image'
             %p.camera_name
               = user.name
-  = link_to '活動拠点を選び直す', users_path, class: 'agein_prefecture'
+  = link_to '検索し直す', users_path, class: 'agein_prefecture'
+= paginate @users

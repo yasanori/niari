@@ -74,7 +74,7 @@
 .prf-bottom-contents {
   background: rgba(200, 200, 200, 0.8);
   max-height: 100%;
-  max-height: 100%;
+  max-width: 100%;
   padding: 15px;
   margin: 15px auto 0;
   display: inline-block;
@@ -115,12 +115,12 @@
       box-shadow: 0 0 10px #808080 inset;
       padding: 8px;
       max-width: 100%;
-      max-height: auto;
+      max-height: 100%;
       &__date {
         object-fit: cover;
         height: auto;
-        max-width: 200px;
-        max-height: 150px;
+        max-width: 100%;
+        height: auto;
       }
     }
   }
@@ -177,20 +177,14 @@
 
 .prf-bottom-contents {
   background: rgba(200, 200, 200, 0.8);
-  max-height: 100%;
-  max-height: 100%;
-  padding: 25px;
+  padding: 10px;
   margin: 15px auto 0;
   display: inline-block;
   border-radius: 15px;
   .sub-text {
-    color: #000000;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     letter-spacing: 1px;
     text-shadow:  3px 3px 7px #808080;
-    font-weight: bold;
-    position: relative;
-    display: inline;
     padding-bottom: 5px;
   }
   .sub-text::before,
@@ -210,7 +204,7 @@
     color: rgba(0, 0, 0, 0.4);
   }
   .memories-box {
-    display: none;
+    border-spacing: 10px 10px;
   }
 }
 }
