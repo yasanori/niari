@@ -83,3 +83,4 @@ gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'erb2haml'
 gem "acts_as_follower", github: "tcocca/acts_as_follower"
+gem 'seed-fu'
