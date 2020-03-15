@@ -67,4 +67,9 @@ $(document).on('turbolinks:load', function () {
         });
     });
   });
+  $(function () {
+    $("#prefecture").change(function () {
+      $(".search_form").submit();
+    });
+  });
 });

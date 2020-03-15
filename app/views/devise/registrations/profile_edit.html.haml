@@ -1,7 +1,6 @@
 .container-login
   %h1 アカウント編集
   = form_for current_user, url: {action: 'profile_update'} do |f|
-    -# = bootstrap_devise_error_messages!
 
     .form-group
       = f.label :name
@@ -14,6 +13,8 @@
     .form-group
       = f.label :profile
       = f.text_area :profile, autofocus: true, rows: "10", cols: "20", class: "form-control"
+    .form-group
+      = f.collection_select :prefecture_id, Prefecture.all,:id, :name, include_blank: '〜 活動拠点 〜', class: "form-control"
     .form-group
       = f.select :camera_id, {TakeMemory: 1, GiveMemory: 2}
     .form-group

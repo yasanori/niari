@@ -8,12 +8,13 @@ class User < ApplicationRecord
   has_many :rooms, through: :entries
   has_many :memories, dependent: :destroy
   has_many :messages, dependent: :destroy
+  belongs_to :prefecture, optional: true
 
   acts_as_followable
   acts_as_follower
 
   def self.search(search)
-    return Users..where(camera_id: 1).page(params[:page]).per(15) unless search
+    return Users.all unless search
     User.where('name LIKE(?)', "%#{search}%")
   end
 

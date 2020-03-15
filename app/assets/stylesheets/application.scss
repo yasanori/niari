@@ -39,7 +39,8 @@ body {
 .contents {
   padding: 40px 40px 10px;
   height: calc(100% - 80px);
-  widows: 100%;
+  width: 100%;
+  overflow: auto;
   a {
     text-decoration: none;
   }
