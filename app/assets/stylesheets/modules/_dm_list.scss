@@ -1,0 +1,19 @@
+.dm_list {
+  margin: 10px auto 0;
+  &__box {
+    // border: 1px solid #ffffff;
+    padding: 10px;
+    width: 20%;
+    margin: 0 auto;
+    &__link {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+    &__link:hover {
+      color: rgba(255, 255, 255, 0.4);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    }
+  }
+}

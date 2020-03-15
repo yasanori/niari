@@ -1,0 +1,6 @@
+%h2.heading
+  Direct Message List
+.dm_list
+- @users_rooms.each do |user_room|
+  .dm_list__box
+    = link_to user_room[:user].name, room_path(user_room[:room]), class: "dm_list__box__link"
