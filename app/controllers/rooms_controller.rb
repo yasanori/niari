@@ -14,6 +14,13 @@ class RoomsController < ApplicationController
           else
             @user_room[:user] = entry_user.user
             @user_room[:room] = room
+            last_message = room.messages.order(updated_at: :desc).limit(1)
+            if last_message.present?
+              @user_room[:message] = last_message[0].text
+            else
+              @user_room[:message] = "[ まだメッセージはありません ]"
+            end
+            # @user_room[:message] = room.messages.order(updated_at: :desc).limit(1)
             @users_rooms <<  @user_room
           end
         end
