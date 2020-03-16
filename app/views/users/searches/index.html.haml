@@ -5,22 +5,24 @@
 .camera_boxes
   - @users.each do |user|
     - if current_user.id != user.id
-      = link_to user_path(user.id), class: "camera_link" do
-        .camera_box
-          .mini-prf-image-box
-            = image_tag user.image.url, class: 'mini-prf-image'
-          %p.camera_name
-            = user.name
-
-  - if @users.length == 0
-    その場所を拠点としている人はいませんでした
-    - @outher_users.each do |user|
-      - if current_user.id != user.id
+      .camera_contents
         = link_to user_path(user.id), class: "camera_link" do
           .camera_box
             .mini-prf-image-box
               = image_tag user.image.url, class: 'mini-prf-image'
             %p.camera_name
               = user.name
+
+  - if @users.length == 0
+    その場所を拠点としている人はいませんでした
+    - @outher_users.each do |user|
+      - if current_user.id != user.id
+        .camera_contents
+          = link_to user_path(user.id), class: "camera_link" do
+            .camera_box
+              .mini-prf-image-box
+                = image_tag user.image.url, class: 'mini-prf-image'
+              %p.camera_name
+                = user.name
   = link_to '検索し直す', users_path, class: 'agein_prefecture'
 = paginate @users

@@ -6,32 +6,36 @@ $(document).on('turbolinks:load', function () {
         if (user.image.url == "nofoto.jpg") {
           var html =
             `
-          <a class="camera_link" href="/users/${user.id}">
-            <div class='camera_box'>
-              <div class='mini-prf-image-box'>
-                <img class="mini-prf-image" src="/assets/nofoto-281bffacc1ae6b6f24b2170d7a182622072296aa7f34ae7cc4fcd4cee8601a9c.jpg" />
-              </div>
-              <p class='camera_name'>
-                ${user.name}
-              </p>
+            <div class="camera_contents">
+              <a class="camera_link" href="/users/${user.id}">
+                <div class='camera_box'>
+                  <div class='mini-prf-image-box'>
+                    <img class="mini-prf-image" src="/assets/nofoto-281bffacc1ae6b6f24b2170d7a182622072296aa7f34ae7cc4fcd4cee8601a9c.jpg" />
+                  </div>
+                  <p class='camera_name'>
+                    ${user.name}
+                  </p>
+                </div>
+              </a>
             </div>
-          </a>
         `
           search_list.append(html);
         } else {
           var html =
             `
-          <a class="camera_link" href="/users/${user.id}">
-            <div class='camera_box'>
-              <div class='mini-prf-image-box'>
-                <img class="mini-prf-image" src="${user.image.url}" />
+              <div class="camera_contents">
+                <a class="camera_link" href="/users/${user.id}">
+                  <div class='camera_box'>
+                    <div class='mini-prf-image-box'>
+                      <img class="mini-prf-image" src="${user.image.url}" />
+                    </div>
+                    <p class='camera_name'>
+                      ${user.name}
+                    </p>
+                  </div>
+                </a>
               </div>
-              <p class='camera_name'>
-                ${user.name}
-              </p>
-            </div>
-          </a>
-        `
+            `
           search_list.append(html);
         }
       } else {
