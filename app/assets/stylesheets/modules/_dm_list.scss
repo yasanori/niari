@@ -1,0 +1,49 @@
+.dm_list {
+  margin: 10px auto 0;
+  overflow-y: auto;
+  &__content {
+    &__link {
+      color: #ffffff;
+      text-decoration: none;
+      &__box {
+      border: 1px solid #ffffff;
+      letter-spacing: 1px;
+      padding: 10px;
+      width: 20%;
+      margin: 0 auto;
+      display: inline-block;
+      &__name {
+        font-size: 2rem;
+      }
+      &__message {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.6);
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+      &__box:hover {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.4);
+      }
+    }
+  }
+}
+
+@media (max-width:599px){
+  .dm_list {
+  &__content {
+    &__link {
+      &__box {
+      width: 70%;
+      &__name {
+        font-size: 1.6rem;
+      }
+      &__message {
+        font-size: 1rem;
+      }
+    }
+    }
+  }
+}
+}
