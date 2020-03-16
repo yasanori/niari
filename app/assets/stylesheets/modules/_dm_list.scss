@@ -29,3 +29,21 @@
     }
   }
 }
+
+@media (max-width:599px){
+  .dm_list {
+  &__content {
+    &__link {
+      &__box {
+      width: 70%;
+      &__name {
+        font-size: 1.6rem;
+      }
+      &__message {
+        font-size: 1rem;
+      }
+    }
+    }
+  }
+}
+}
