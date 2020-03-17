@@ -17,15 +17,18 @@ class RoomsController < ApplicationController
             last_message = room.messages.order(updated_at: :desc).limit(1)
             if last_message.present?
               @user_room[:message] = last_message[0].text
+              @user_room[:time] = last_message[0].created_at
             else
               @user_room[:message] = "[ まだメッセージはありません ]"
+              @user_room[:time] = 0
             end
-            # @user_room[:message] = room.messages.order(updated_at: :desc).limit(1)
             @users_rooms <<  @user_room
           end
+          @users_rooms.sort_by! { |a| a[:time] }.reverse!
         end
       end
     end
+
   end
 
   def create
