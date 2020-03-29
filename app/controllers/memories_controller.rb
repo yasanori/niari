@@ -9,7 +9,9 @@ class MemoriesController < ApplicationController
 
   def destroy
     @memory = Memory.find(params[:id])
+    @path = Memory.find(params[:id])
     @memory.destroy
+    redirect_to colection_user_path(@path)
   end
 
   def new
@@ -18,12 +20,6 @@ class MemoriesController < ApplicationController
 
   def create
     Memory.create(memory_params)
-  end
-
-  def destroy
-    @memory = Memory.find(params[:id])
-    @memory.destroy
-    redirect_to root_path
   end
 
   private

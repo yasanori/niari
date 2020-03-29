@@ -7,4 +7,4 @@
   - @memories.each do |memory|
     = link_to memory_path(memory) do
       .colection
-        = image_tag memory.photo.url
+        = image_tag memory.photo.url, class: "colection-image"

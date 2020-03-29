@@ -21,5 +21,10 @@
   .colection {
     display: inline-block;
     margin: 10px;
+    width: 100%;
+    max-width: 30rem;
+    .colection-image {
+      width: 100%;
+    }
   }
 }

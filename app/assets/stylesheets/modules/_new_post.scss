@@ -1,9 +1,43 @@
 .new_post {
   margin: 20px;
-  .image_label {
-    font-size: 2rem;
-  }
-  .post_btn {
-    color: #000000;
-  }
 }
+
+.post_btn {
+  color: #000000;
+  display: block;
+  margin: 2rem auto;
+  width: 25rem;
+  background: rgba( 255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+    .image_form {
+    &__contents {
+      .image_label {
+        font-size: 2rem;
+        cursor: pointer;
+        .prev-contents {
+          .prev-content {
+            width: 30rem;
+            padding: 1rem 2rem;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.6)inset;
+            .prev-image {
+              object-fit: cover;
+              width: 100%;
+            }
+          }
+          .photo-icon {
+            // height: 20rem;
+            // width: 30rem;
+            border: 2px solid #ffffff;
+            padding: 1rem 2rem;
+            color: #ffffff;
+            font-size: 20rem;
+          }
+        }
+        .hidden_file {
+          display: none;
+        }
+      }
+    }
+  }

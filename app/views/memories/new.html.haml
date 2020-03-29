@@ -3,22 +3,9 @@
 .new_post
   .image_form
     = form_with(model: @memory, local: true) do |f|
-      = f.label :photo, class: 'image_label' do
-        = icon('fas', 'image', class: 'photo-icon')
-        = f.file_field :photo, class: 'image_form__content'
+      .image_form__contents
+        = f.label :photo, class: 'image_label' do
+          .prev-contents
+            = icon('fas', 'image', class: 'photo-icon')
+          = f.file_field :photo, class: 'image_form__contents__field hidden_file'
       = f.submit 'SEND', class: "post_btn"
-
-
--# %h2.heading
--#   New Post
--# .new-post
--#   .image_form
--#     = form_with(model: @memory, local: true) do |f|
--#       = f.label :photo, class: 'image_label' do
--#         .preview_image
--#           - if @memory.photo.url.present?
--#             = image_tag @memory.photo.url
--#           - else
--#             = icon('fas', 'image', class: 'photo-icon')
--#         = f.file_field :photo, id: "post_file", class: 'image_form__content'
--#       = f.submit 'SEND'
