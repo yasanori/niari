@@ -24,12 +24,15 @@
       &__user_name {
         a {
           color: #ffffff;
-          font-size: 1.2rem;
+          font-size: 1.4rem;
           text-decoration: none;
         }
         a:hover {
           color: rgba( 255, 255, 255, 0.6);
         }
+      }
+      &__date {
+        font-size: 1rem;
       }
       &__text {
         display: inline-block;
