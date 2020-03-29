@@ -14,10 +14,18 @@
       display: inline-block;
       &__name {
         font-size: 2rem;
+        display: inline;
+      }
+      .new-message-badge {
+        display: inline;
+        background: rgba(255, 0, 0, 0.6);
+        border-radius: 100px;
+        padding: 5px;
+        font-size: 1.2rem;
       }
       &__message {
         font-size: 1.2rem;
-        color: rgba(255, 255, 255, 0.6);
+        color: rgba(255, 255, 255, 0.4);
         overflow: hidden;
         text-overflow: ellipsis;
       }

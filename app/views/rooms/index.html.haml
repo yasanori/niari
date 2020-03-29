@@ -8,5 +8,6 @@
         .dm_list__content__link__box
           %h3.dm_list__content__link__box__name
             = user_room[:user].name
+            = new_message_badga(user_room[:room])
           %p.dm_list__content__link__box__message
             = user_room[:message]

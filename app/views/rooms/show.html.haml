@@ -30,4 +30,5 @@
     = form_with(model: @message, local: true, class: "dm_form") do |f|
       = f.text_area :text, lows: "3", class: "dm_form__text"
       = f.hidden_field :room_id, value: @room.id
+      = f.hidden_field :receive_user_id, value: @receive_user.user_id
       = f.submit "SEND", class: "dm_form__btn"
