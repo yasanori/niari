@@ -18,6 +18,13 @@ class User < ApplicationRecord
     User.where('name LIKE(?)', "%#{search}%")
   end
 
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.name = "Guest User"
+    end
+  end
+
   validates :profile, length: { maximum: 200 }
   mount_uploader :image, ImageUploader
 end
