@@ -14,6 +14,22 @@
     position: relative;
     overflow: hidden;
 }
+.guest-login {
+  padding: 1.5rem;
+}
+.guest-btn {
+  width: 35rem;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 2rem;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 2rem;
+  border-radius: 5%;
+}
+.guest-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.5);
+}
 
 .loop_slider {
     float: left;

@@ -5,3 +5,5 @@
     - @memories.each do |memory|
       %li.loop_slider__contents
         = image_tag memory.photo.url, class: "loop_image"
+- unless user_signed_in?
+  = link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post , class: "guest-btn"
