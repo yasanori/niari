@@ -1,7 +1,7 @@
 # niari
 写真を撮ることが好きなアマチュアカメラマンと、旅行先や何かの記念として思い出を写真として残したい人などをつなげるアプリです。
 
-![niari](https://user-images.githubusercontent.com/38156084/78450752-cf790c00-76bb-11ea-8183-083a4d09b97a.png)
+![nairi top](https://user-images.githubusercontent.com/38156084/78450951-47940180-76bd-11ea-9f82-5170d9bdf705.gif)
 
 ## 開発経緯
 素敵な写真を撮ることができるアマチュアカメラマンの方が多くいらっしゃいます。
