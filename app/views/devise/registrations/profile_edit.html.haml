@@ -8,7 +8,11 @@
         .image_form__contents
           = f.label :image, class: 'image_label' do
             .prev-contents
-              = icon('fas', 'image', class: 'photo-icon')
+              - if current_user.image.present?
+                .prev-content
+                  = image_tag current_user.image.url, alt: "preview", class: "prev-image"
+              - else
+                = icon('fas', 'image', class: 'photo-icon')
             = f.file_field :image, class: 'image_form__contents__field hidden_file'
     .form-group
       = f.label :name

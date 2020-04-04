@@ -10,3 +10,15 @@
       margin-right: 10px;
     }
   }
+
+@media (max-width:599px){
+  .search_form {
+    width: 80%;
+    height: 2rem;
+    margin: 1rem auto;
+    .search_input {
+      width: 100%;
+      margin-right: 10px;
+    }
+  }
+}

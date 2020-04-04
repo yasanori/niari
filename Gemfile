@@ -90,3 +90,4 @@ gem 'erb2haml'
 gem "acts_as_follower", github: "tcocca/acts_as_follower"
 gem 'seed-fu'
 gem 'fog-aws'
+gem 'active_hash'

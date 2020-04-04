@@ -48,10 +48,27 @@
 
 @media (max-width:599px){
 .camera_boxes {
-  .camera_link {
-    .camera_box {
-      width: 60%;
+  padding: 1rem 0;
+  .camera_contents {
+    .camera_link {
+      .camera_box {
+        width: 80%;
+        padding: 0.5rem 1rem;
+        .mini-prf-image-box {
+          .mini-prf-image {
+          }
+        }
+        .camera_name {
+          font-size: 1.6rem;
+        }
+      }
     }
   }
+   .agein_prefecture {
+      font-size: 1.2rem;
+      padding: 0.5rem;
+      margin: 1.5rem;
+      display: inline-block;
+    }
 }
 }

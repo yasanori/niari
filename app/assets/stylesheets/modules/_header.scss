@@ -108,3 +108,51 @@
     }
   }
 }
+
+@media (max-width:599px){
+
+.header {
+  height: 4rem;
+  padding: 1rem 2rem;
+  .navbar {
+    &__left {
+      line-height: 3rem;
+      .navbar-brand {
+        font-size: 2rem;
+      }
+      .search-gate {
+        font-size: 1.2rem;
+      }
+    }
+    #Navber {
+      .nav-name-post {
+        padding: 0.5rem;
+        span {
+          margin-right: 1rem;
+          font-size: 1.2rem;
+          &:after {
+            font-size: .5em;
+          }
+        }
+        .my-lists {
+          width: 12rem;
+          top: 1.5rem;
+          .my-list {
+            font-size: 1rem;
+            a {
+              padding: 0.5rem 1rem;
+            }
+          }
+        }
+        .post-photo {
+          font-size: 1.2rem;
+        }
+      }
+      .navbar-nav li .nav-link {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+}

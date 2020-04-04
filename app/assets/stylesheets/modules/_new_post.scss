@@ -1,3 +1,13 @@
+.to_top {
+  color: #ffffff;
+  font-size: 1.6rem;
+  display: block;
+  text-decoration: none;
+}
+.to_top:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .new_post {
   margin: 20px;
 }
@@ -40,4 +50,42 @@
         }
       }
     }
+  }
+
+
+  @media (max-width:599px){
+   .image_form {
+    &__contents {
+      .image_label {
+        .prev-contents {
+          width: 100%;
+          .prev-content {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            margin: 0 auto;
+            .prev-image {
+              object-fit: cover;
+              width: 100%;
+            }
+          }
+          .photo-icon {
+            // height: 20rem;
+            // width: 30rem;
+            border: 2px solid #ffffff;
+            padding: 1rem 2rem;
+            color: #ffffff;
+            font-size: 20rem;
+          }
+        }
+        .hidden_file {
+          display: none;
+        }
+      }
+    }
+  }
+
+.post_btn {
+  width: 80%;
+
+}
   }

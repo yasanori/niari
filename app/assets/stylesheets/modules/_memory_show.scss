@@ -30,3 +30,36 @@
     }
   }
 }
+
+@media (max-width:599px){
+  .preview_contents {
+    width: 100%;
+  .preview_content {
+    width: 80%;
+    margin: 0 auto;
+    &__memory {
+      margin: 30px auto;
+      width: 100%;
+      height: auto;
+      padding: 1rem;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .memory_delete {
+    margin: 30px auto;
+    &__btn {
+      color: #ffffff;
+      text-decoration: none;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.2);
+      width: 100px;
+      border-radius: 10px;
+    }
+    &__btn:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+}

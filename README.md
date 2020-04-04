@@ -1,40 +1,62 @@
+# niari
+写真を撮ることが好きなアマチュアカメラマンと、旅行先や何かの記念として思い出を写真として残したい人などをつなげるアプリです。
+## 開発経緯
+素敵な写真を撮ることができるアマチュアカメラマンの方が多くいらっしゃいます。
+そのため写真を撮りたいが、被写体となってくれる人がいないというカメラマンの悩みと、思い出を綺麗な写真として残したいがプロにお願いするのは気が引けるといった写真を撮って欲しい人の悩みを解決するため開発いたしました。
 
-<!-- 
-#ER図
-
-## itemsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|id|integer||
-|name|string|null: false|
-|price|integer|null: false|
-|introduce|text|null: false|
-|user_id|integer|null: false,foreign_key: true|
-|brand_id|integer|foreign_key: true|
-|size_id|integer|foreign_key: true|
-|commodity_condition_id|integer|foreign_key: true|
-|shippig_charge_id|integer|foreign_key: true|
-|shippig_method_id|integer|foreign_key: true|
-|prefecture_id|integer|null: false|
-|shippig_day_id|integer|foreign_key: true|
-|purchase|integer||
-|buyer|integer||
+## アプリ概要
+- 写真が好きなアマチュアカメラマンと、思い出を写真として残したい人などをつなげるアプリ
+- ユーザー登録行う
+- カメラマンか撮って欲しい人かを設定で決める（デフォルトは撮って欲しい人）
+- カメラマンを活動拠点か名前で検索する
+- 気に入ったカメラマンがいればフォロー出来る
+- DMで撮影交渉を行う
 
 
-### Association
-- belongs_to :user
-- belongs_to :category
-<!-- - belongs_to :size -->
-<!-- - belongs_to :commodoty_condition -->
-- belongs_to :brand
-<!-- - belongs_to :shipping_charge -->
-<!-- - belongs_to :shipping_mathod -->
-<!-- - belongs_to :shipping_day -->
-- has_many :item_images dependent: :destroy
-- belongs_to_active_hash: prefecture
-- belongs_to_active_hash: commodity_condition
-- belongs_to_active_hash: shipping_method
-- belongs_to_active_hash :shipping_day
-- belongs_to_active_hash :shipping_charge
-- belongs_to_active_hash :size -->
+## デモ
+デモページ公開中です。
+[nairi](http://18.180.30.32/)
+トップページ下部、または右上ログインボタンを押し、ログイン画面からGuest Userでログインが出来ます。
+
+## 機能
+Ruby on Railsで制作したアプリとなります
+
+- ユーザー機能
+- 画像投稿機能
+- ユーザー間フォロー機能
+- DM機能
+- カメラマンとして登録することで検索対象となる
+- 名前、活動拠点でのカメラマン検索機能
+### 使用Gem
+- Devise
+- Carrierwave
+- MiniMagick
+- acts_as_follower
+- active_hash
+- font-awesome-sass 等
+
+## こだわり
+- トップページで投稿画像の最新１０件を自動スライド表示
+- 画像投稿の際、ファイル選択した時点でプレビュー表示
+- 名前検索はインクリメンタルサーチを実装
+- DM機能には既読、未読判定を付与
+- DMリストに未読メッセージ数を表示
+- DMリストをメッセージの新しい順に随時並び替わる
+
+## 使い方
+トップページ下部、又は画面右上「ログイン」からGuest Userとしてログインできます。
+ログイン後、トップページ左上からカメラマンを検索できます。
+画面右上、「Guest User」からメニューが表示できます。
+
+## インストール
+- $ git clone https://github.com/yasanori/niari.git
+- $ cd niari
+- $ bundle install
+
+
+## 作者
+[優典: Twitter](https://twitter.com/___yu_suke___)
+
+## ライセンス
+This project is licensed free.
+ご自由にご利用ください

@@ -66,33 +66,41 @@
 
 
 @media (max-width:599px){
-
 .follow_contents {
-  width: 45%;
+  width: 90%;
   .follow_content,
   .follower_content {
+    width: 45%;
+    padding: 0.8rem;
     .follow_list_btn,
     .follower_list_btn {
     }
   }
   .follow_content {
+    margin-right: 0.5rem;
   }
   .follow_content:hover,
   .follower_content:hover {
+    background-color: rgba(255, 255, 255, 0.3);
   }
 }
 .follow_user {
+  width: 80%;
+  padding: 5px 1.5rem;
   &__link {
     &__name {
+      font-size: 1.4rem;
     }
     &__name:hover {
     }
   }
   &__btn {
     .prf-btn {
+      font-size: 1rem;
     }
   }
   &__btn:hover {
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }
 }
