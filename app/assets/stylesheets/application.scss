@@ -4,17 +4,17 @@
 @import "font-awesome";
 @import "modules/header";
 @import "modules/top_page";
-@import "modules/memories";
-@import "modules/memory_show";
-@import "modules/users_index";
-@import "modules/users_show";
-@import "modules/dm";
+@import "memory/memories";
+@import "memory/memory_show";
+@import "users/users_index";
+@import "users/users_show";
+@import "message/dm";
 @import "modules/follow_list";
-@import "modules/colection";
-@import "modules/profile_edit";
-@import "modules/search";
-@import "modules/new_post";
-@import "modules/dm_list";
+@import "memory/colection";
+@import "users/profile_edit";
+@import "users/search";
+@import "memory/new_post";
+@import "message/dm_list";
 @import "modules/respon";
 
 html {
