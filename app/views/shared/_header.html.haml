@@ -7,15 +7,29 @@
       #Navber
         - if user_signed_in?
           .nav-name-post
-            %span<
-              = current_user.name
-              %ul.my-lists><
-                %li.my-list><
-                  = link_to "マイページ", user_path(current_user)
-                  = link_to "DM", rooms_path
-                  = link_to 'プロフィール編集', profile_edit_path
-                  = link_to "メール & PW編集", edit_user_registration_path
-                  = link_to "ログアウト", destroy_user_session_path, method: :delete
+            - if @badg == 0
+              %span.no_badg<
+                = current_user.name
+                %ul.my-lists><
+                  %li.my-list><
+                    = link_to "マイページ", user_path(current_user)
+                    = link_to "DM", rooms_path, class: "new_message"
+                    = all_new_message_badga
+                    = link_to 'プロフィール編集', profile_edit_path
+                    = link_to "メール & PW編集", edit_user_registration_path
+                    = link_to "ログアウト", destroy_user_session_path, method: :delete
+            - else
+              %span.add_badg<
+                = current_user.name
+                %ul.my-lists><
+                  %li.my-list><
+                    = link_to "マイページ", user_path(current_user)
+                    .dm_badg
+                      = link_to "DM", rooms_path
+                      = all_new_message_badga
+                    = link_to 'プロフィール編集', profile_edit_path
+                    = link_to "メール & PW編集", edit_user_registration_path
+                    = link_to "ログアウト", destroy_user_session_path, method: :delete
             = link_to "投稿する", new_memory_path, class: "post-photo"
         - else
           %ul.navbar-nav

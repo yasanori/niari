@@ -57,6 +57,9 @@
         span:hover {
           color: rgba( 255, 255, 255, 0.6);
         }
+        .add_badg {
+          border-bottom: 1px solid red;
+        }
         .my-lists {
           display: none;
           width: 150px;
@@ -107,6 +110,18 @@
       }
     }
   }
+}
+
+.dm_badg {
+  display: flex;
+  align-items: center;
+}
+
+.all-new-message-badge {
+  background: rgba(255, 0, 0, 0.6);
+  border-radius: 25%;
+  padding: 5px;
+  font-size: 1.2rem;
 }
 
 @media (max-width:599px){

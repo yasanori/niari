@@ -8,4 +8,15 @@ module ApplicationHelper
       content_tag(:div, message_count, class: 'new-message-badge')
     end
   end
+
+    def all_new_message_badga
+      receive_user = Message.where(receive_user_id: current_user.id).count
+      receive_user_checked_message = Message.where(receive_user_id_checked_message: current_user.id).count
+      message_count = receive_user - receive_user_checked_message
+      if 0 == message_count
+      else
+        content_tag(:div, message_count, class: 'all-new-message-badge')
+      end
+    end
+
 end
