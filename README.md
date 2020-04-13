@@ -56,6 +56,9 @@ Ruby on Railsで制作したアプリとなります
 - $ cd niari
 - $ bundle install
 
+## 本アプリの今後
+カメラマンの人柄をより伝えるため、星や数値ではない評価制度の導入。
+現在のDMでの交渉に加えて、ワンタッチで出来る申請機能
 
 ## 作者
 [優典: Twitter](https://twitter.com/___yu_suke___)

@@ -3,6 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  mount_uploader :image, ImageUploader
+  validates :profile, length: { maximum: 200 }
+  validates :name, presence: true
 
   has_many :entries, dependent: :destroy
   has_many :rooms, through: :entries
@@ -25,6 +28,5 @@ class User < ApplicationRecord
     end
   end
 
-  validates :profile, length: { maximum: 200 }
-  mount_uploader :image, ImageUploader
+
 end
