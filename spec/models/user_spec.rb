@@ -16,6 +16,12 @@ RSpec.describe User, type: :model do
       expect(user.errors[:email]).to include("を入力してください")
     end
 
+    it "パスワードがない場合は登録ができないこと" do
+      user = build(:user, password: "")
+      user.valid?
+      expect(user.errors[:password]).to include("を入力してください")
+    end
+
   end
 
 end
