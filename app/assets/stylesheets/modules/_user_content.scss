@@ -1,5 +1,6 @@
 .user-contants {
   display: flex;
+  margin: 0 auto;
 }
 
 .user_link {
@@ -14,6 +15,7 @@
       &__image {
         width: 100%;
         height: 21rem;
+        background-color: $font-hover-color;
         .main-image {
           object-fit: cover;
           width: 100%;
@@ -27,30 +29,33 @@
           justify-content: space-around;
           height: 5rem;
           padding: 1rem 2rem;
+          border-bottom: 1px solid $font-hover-color;
           &__image {
             width: 20%;
             .mini-prf-image {
               object-fit: cover;
               width: 100%;
+              height: 100%;
               border-radius: 50%;
             }
           }
           &__name {
             .user-name {
-              font-size: 2rem;
+              font-size: 2.4rem;
               line-height: 5rem;
             }
           }
           &__prefecture {
             .user-prefecture {
-              font-size: 1.5rem;
+              font-size: 1.2rem;
               line-height: 5rem;
             }
           }
         }
         &__text {
+          padding: 1rem 1.5rem;
           .user-text {
-
+            font-size: 1.6rem;
           }
         }
       }
@@ -58,6 +63,10 @@
   }
 }
 
+.user_link:hover {
+  opacity: 0.6;
+  color: $defoult-font-color;
+}
 
 @media (max-width:599px){
   .user_link {
