@@ -1,0 +1,15 @@
+- if current_user.id != user.id
+  = link_to user_path(user.id), class: "user_link" do
+    .user-wrapper
+      .user-container
+        .user-container__image
+          = image_tag user.photos.first.image.url, class: ''
+        .user-container__profile
+          .user-container__profile__main
+            .user-container__profile__main__image
+              = image_tag user.image.url , alt: 'ユーザー', class: 'mini-prf-image'
+            .user-container__profile__main__name
+              %p.user-name
+                = user.name
+          .user-container__profile__text
+            = user.profile
