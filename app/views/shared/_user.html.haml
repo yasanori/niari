@@ -3,7 +3,8 @@
     .user-wrapper
       .user-container
         .user-container__image
-          = image_tag user.photos.first.image.url, class: ''
+          - if user.memories.present?
+            = image_tag user.memories.first.photo.url, class: 'main-image'
         .user-container__profile
           .user-container__profile__main
             .user-container__profile__main__image
@@ -11,5 +12,11 @@
             .user-container__profile__main__name
               %p.user-name
                 = user.name
+            .user-container__profile__main__prefecture
+              - if user.prefecture.present?
+                %p.user-prefecture
+                  = user.prefecture.name
           .user-container__profile__text
-            = user.profile
+            - if user.profile.present?
+              %p.user-text
+                = user.profile
