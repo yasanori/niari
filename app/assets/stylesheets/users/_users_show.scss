@@ -32,9 +32,9 @@
         margin: 0 auto;
         padding: 15px;
         word-wrap: break-word;
-        border-right: 1px solid #dddddd;
-        border-left: 1px solid #dddddd;
-        border-bottom: 1px solid #dddddd;
+        border-right: 1px solid $defoult-font-color;
+        border-left: 1px solid $defoult-font-color;
+        border-bottom: 1px solid $defoult-font-color;
       }
     }
     &__btns {
@@ -48,13 +48,14 @@
         display: table-cell;
         color: rgba(0, 0, 0, 0.8);
         font-weight: bold;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)inset;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)inset;
         text-decoration: none;
         padding: 10px;
         border: 1px solid rgba(0, 0, 0, 0.8);
+        background: $opacity-color;
       }
       .prf-btn:hover {
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: $btn-hover-color;
       }
       form {
         display: table-cell;

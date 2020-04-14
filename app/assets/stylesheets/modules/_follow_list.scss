@@ -8,11 +8,11 @@
   color: $defoult-font-color;
   .follow_content,
   .follower_content {
-    background: rgba(0, 0, 0, 0.2);
+    background: $opacity-color;
     width: 40%;
     padding: 10px;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6)inset;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)inset;
     .follow_list_btn,
     .follower_list_btn {
       color: $defoult-font-color;
@@ -24,7 +24,7 @@
   }
   .follow_content:hover,
   .follower_content:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: $btn-hover-color;
   }
 }
 .follow_user {
