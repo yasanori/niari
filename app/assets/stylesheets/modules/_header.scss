@@ -1,12 +1,3 @@
-@mixin setting-text($fSize: 16px, $color: $white-color) {
-  font-size: $fSize;
-  letter-spacing: 0px;
-}
-
-@mixin defoult-font-color($color: rgb(123, 123, 123), $weight: bold) {
-  color: $color;
-  font-weight: $weight;
-}
 
 .header {
   width: 100%;
@@ -21,8 +12,8 @@
     &__left {
       line-height: 80px;
       .navbar-brand {
-        color: rgb(244, 244, 244);
-        text-shadow: 2px 2px 4px #000000;
+        @include header-font-color();
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         font-size: 3.2rem;
         letter-spacing: 2px;
       }
@@ -32,7 +23,7 @@
 
       .search-gate {
         font-size: 1.5rem;
-        @include defoult-font-color();
+        @include header-font-color();
         text-decoration: none;
         padding: 5px;
       }
@@ -45,7 +36,7 @@
         display: flex;
         padding: 10px;
         span {
-          @include defoult-font-color();
+          @include header-font-color();
           margin-right: 15px;
           font-size: 1.5rem;
           cursor: pointer;
@@ -56,7 +47,7 @@
             margin-left: 5px;
           }
           &:hover .my-lists {
-            @include defoult-font-color();
+            @include header-font-color();
             display: block;
           }
         }
@@ -87,7 +78,7 @@
               text-align: left;
               text-decoration: none;
               border-bottom: 1px solid #d8d8d8;
-              @include defoult-font-color();
+              @include header-font-color();
             }
             a:hover {
               color: blue;
@@ -105,7 +96,7 @@
         }
       }
       .navbar-nav li .nav-link {
-        @include defoult-font-color();
+        @include header-font-color();
         font-size: 1.5rem;
         letter-spacing: 1px;
         padding: 5px;
@@ -124,7 +115,8 @@
 }
 
 .all-new-message-badge {
-  @include defoult-font-color();
+  color: #ffffff;;
+  background-color: rgba(255, 0, 0, 0.5);
   border-radius: 25%;
   padding: 5px;
   font-size: 1.2rem;
