@@ -1,0 +1,11 @@
+
+$image-shadow-color: gray;
+$defoult-font-color: black;
+$opacity-color: rgba(0, 0, 0, 0.1);
+$btn-hover-color: rgba(233, 233, 233, 0.3);
+$font-hover-color: rgba(0, 0, 0, 0.2);
+
+@mixin header-font-color($color: rgb(123, 123, 123), $weight: bold) {
+  color: $color;
+  font-weight: $weight;
+}

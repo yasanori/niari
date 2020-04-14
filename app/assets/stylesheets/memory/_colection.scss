@@ -5,10 +5,10 @@
   letter-spacing: 1px;
   text-decoration: none;
   padding-bottom: 8px;
-  color: #ffffff;
+  color: $defoult-font-color;
 }
 .user_link:hover {
-  color: rgba( 255, 255, 255, 0.6);
+  color: $font-hover-color;
 }
 
 .colections {

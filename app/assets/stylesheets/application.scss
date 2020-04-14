@@ -1,5 +1,6 @@
 @import "normalize";
 @import "bootstrap";
+@import "modules/mixin";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "modules/header";
@@ -27,7 +28,7 @@ html {
 
 
 body {
-  color: #fff;
+  color: $defoult-font-color;
   text-align: center;
   font-size: 1.4rem;
   font-family:'Josefin Slab', "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
@@ -49,6 +50,7 @@ body {
 }
 
 .heading {
+  color: $defoult-font-color;
   position: relative;
   display: inline-block;
   font-size: 2.5rem;
@@ -62,7 +64,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  border-bottom:1px solid #cccccc ;
+  border-bottom:1px solid black ;
 }
 
 .heading::before {
@@ -77,7 +79,7 @@ body {
 
 
 .alert-notice {
-  background: rgba(255, 255, 255, 0.2);
+  background: $opacity-color;
   width: 40%;
   margin: 0 auto;
   .close {
@@ -87,11 +89,11 @@ body {
 
 .alert-alert {
   // @extend .alert-danger;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.2);
   width: 40%;
   margin: 0 auto;
   .close {
-    color: #fff;
+    color: $defoult-font-color;
   }
 }
 

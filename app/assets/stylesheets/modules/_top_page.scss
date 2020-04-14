@@ -1,9 +1,10 @@
 
 .site_title {
   font-size: 12rem;
-  text-shadow:  5px 5px 15px #000000;
+  text-shadow:  5px 5px 1rem #000000;
   letter-spacing: 3px;
   margin-bottom: 100px;
+  color: white;
 }
 
 .top_page {
@@ -19,16 +20,16 @@
 }
 .guest-btn {
   width: 35rem;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.2);
   font-size: 2rem;
-  color: #ffffff;
+  color: $defoult-font-color;
   text-decoration: none;
   padding: 2rem;
   border-radius: 5%;
 }
 .guest-btn:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.5);
+  color: $defoult-font-color;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .loop_slider {
@@ -49,8 +50,11 @@
 .loop_image {
   width: 500px;
   height: auto;
-  padding: 15px;
-  box-shadow: 0 0 20px #ffffff inset;
+  padding: 15px 5px;
+  background-color: #ffffff;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  border-top: 2px solid rgba(0, 0, 0, 0.3);
+  // box-shadow: 0 0 15px #ffffff inset;
 }
 
 .loop_slider:after {

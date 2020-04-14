@@ -1,12 +1,12 @@
 
 .prf-top-contents{
   .main-content {
+    color: $defoult-font-color;
     &__img {
       display: inline-block;
-      border: 1px solid #fff;
-      padding: 10px;
+      border: 2px solid #ffffff;
+      padding: 5px;
       border-radius: 15px;
-      box-shadow: 0 0 10px #fff inset;
       .main-prf-image {
         width: 300px;
         height: 200px;
@@ -19,7 +19,6 @@
         font-size: 6rem;
         letter-spacing: 2px;
         margin: 20px auto;
-        text-shadow: 5px 5px 10px #dddddd;
         display: inline;
       }
       .user_pre {
@@ -33,9 +32,9 @@
         margin: 0 auto;
         padding: 15px;
         word-wrap: break-word;
-        border-right: 1px solid #dddddd;
-        border-left: 1px solid #dddddd;
-        border-bottom: 1px solid #dddddd;
+        border-right: 1px solid $defoult-font-color;
+        border-left: 1px solid $defoult-font-color;
+        border-bottom: 1px solid $defoult-font-color;
       }
     }
     &__btns {
@@ -47,20 +46,21 @@
       width: 45%;
       .prf-btn {
         display: table-cell;
-        color: rgba(255, 255, 255, 0.8);
+        color: rgba(0, 0, 0, 0.8);
         font-weight: bold;
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5)inset;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)inset;
         text-decoration: none;
         padding: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        background: $opacity-color;
       }
       .prf-btn:hover {
-        background-color: rgba(255, 255, 255, 0.2);
+        background-color: $btn-hover-color;
       }
       form {
         display: table-cell;
-        border: #fff;
-        border: 1px solid rgba(255, 255, 255, 0.8);
+        border: $defoult-font-color;
+        border: 1px solid rgba(0, 0, 0, 0.8);
         .prf-btn {
           border: none;
           background-color: transparent;

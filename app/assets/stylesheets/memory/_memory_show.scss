@@ -1,11 +1,11 @@
 
 .preview_contents {
   .heading.block a {
-    color: #ffffff;
+    color: $defoult-font-color;
     display: block;
   }
   .heading.block a:hover {
-    color: rgba(255, 255, 255, 0.4);
+    color: $font-hover-color;
   }
   .preview_content {
     &__memory {
@@ -18,7 +18,7 @@
   .memory_delete {
     margin: 30px auto;
     &__btn {
-      color: #ffffff;
+      color: $defoult-font-color;
       text-decoration: none;
       padding: 15px;
       background: rgba(255, 255, 255, 0.2);
@@ -26,7 +26,7 @@
       border-radius: 10px;
     }
     &__btn:hover {
-      background: rgba(255, 255, 255, 0.5);
+      background: $font-hover-color;
     }
   }
 }

@@ -5,16 +5,17 @@
   width: 25%;
   color: #ffffff;
   margin: 0 auto;
+  color: $defoult-font-color;
   .follow_content,
   .follower_content {
-    background: rgba(119, 119, 119, 0.6);
+    background: $opacity-color;
     width: 40%;
     padding: 10px;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6)inset;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)inset;
     .follow_list_btn,
     .follower_list_btn {
-      color: #ffffff;
+      color: $defoult-font-color;
       text-decoration: none;
     }
   }
@@ -23,44 +24,44 @@
   }
   .follow_content:hover,
   .follower_content:hover {
-    background-color: rgba(1255, 255, 255, 0.3);
+    background-color: $btn-hover-color;
   }
 }
 .follow_user {
   width: 35%;
-  color: #ffffff;
+  color: $defoult-font-color;
   margin: 10px auto 0;
   padding: 5px 30px;
   display: flex;
   justify-content: space-around;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   &__link {
     text-decoration: none;
     &__name {
-      color: #ffffff;
+      color: $defoult-font-color;
       font-size: 2rem;
       text-decoration: none;
       letter-spacing: 1px;
     }
     &__name:hover {
-      color: rgba(255, 255, 255, 0.2);
+      color: rgba(0, 0, 0, 0.2);
     }
   }
   &__btn {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(255, 255, 255, 0.7);
     border: 1px solid rgba(0, 0, 0, 0.6);
     padding: 3px 10px;
     border-radius: 10px;
     .prf-btn {
-      color: #ffffff;
+      color: $defoult-font-color;
       font-size: 1.4rem;
       text-decoration: none;
     }
   }
   &__btn:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
   }
 }
 
