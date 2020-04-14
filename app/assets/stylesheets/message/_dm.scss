@@ -24,12 +24,12 @@
       text-align: right;
       &__user_name {
         a {
-          color: #ffffff;
+          color: $defoult-font-color;
           font-size: 1.4rem;
           text-decoration: none;
         }
         a:hover {
-          color: rgba( 255, 255, 255, 0.6);
+          color: $font-hover-color;
         }
       }
       &__date {
@@ -37,7 +37,7 @@
       }
       &__text {
         display: inline-block;
-        background: rgba(0, 0, 0, 0.5);
+        background: $opacity-color;
         padding: 15px;
         border-radius: 10px;
         letter-spacing: 1px;
