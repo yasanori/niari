@@ -1,0 +1,31 @@
+<a class="user-link" href="/users/${user.id}">
+  <div class="user-wrapper">
+    <div class="user-container">
+      <div class="user-container__image">
+        <img class=" main-image" src="${user.memories.first.photo.url}" />
+      </div>
+      <div class="user-container__profile">
+        <div class="user-container__profile__main">
+          <div class="user-container__profile__main__image">
+            <img class="mini-prf-image" src="${user.image.url}" />
+          </div>
+          <div class="user-container__profile__main__name">
+            <p class='user-name'>
+              ${user.name}
+            </p>
+          </div>
+          <div class="user-container__profile__main__prefecture">
+            <p class='user-prefecture'>
+              ${user.prefecture}
+            </p>
+          </div>
+        </div>
+        <div class="user-container__profile__text">
+          <p class='user-text'>
+            ${user.profile}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
