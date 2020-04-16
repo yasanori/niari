@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :entries, dependent: :destroy
   has_many :rooms, through: :entries
   has_many :memories, dependent: :destroy
+  belongs_to :main_photo, class_name: 'Memory', foreign_key: 'main_photo_id', dependent: :destroy
   has_many :messages, dependent: :destroy
   belongs_to :prefecture, optional: true
 

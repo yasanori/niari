@@ -1,0 +1,22 @@
+- if current_user.id != user.id
+  = link_to user_path(user.id), class: "user_link" do
+    .user-wrapper
+      .user-container
+        .user-container__image
+          - if user.main_photo_id
+            = image_tag user.main_photo.photo.url, class: 'main-image'
+        .user-container__profile
+          .user-container__profile__main
+            .user-container__profile__main__image
+              = image_tag user.image.url , alt: 'ユーザー', class: 'mini-prf-image'
+            .user-container__profile__main__name
+              %p.user-name
+                = user.name
+            .user-container__profile__main__prefecture
+              - if user.prefecture.present?
+                %p.user-prefecture
+                  = user.prefecture.name
+          .user-container__profile__text
+            - if user.profile.present?
+              %p.user-text
+                = user.profile
