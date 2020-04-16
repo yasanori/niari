@@ -3,8 +3,8 @@
     .user-wrapper
       .user-container
         .user-container__image
-          - if user.memories.present?
-            = image_tag user.memories.first.photo.url, class: 'main-image'
+          - if user.main_photo_id
+            = image_tag user.main_photo.photo.url, class: 'main-image'
         .user-container__profile
           .user-container__profile__main
             .user-container__profile__main__image

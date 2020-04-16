@@ -240,7 +240,7 @@ $(document).on('turbolinks:load', function () {
                 <div class="user-wrapper">
                   <div class="user-container">
                     <div class="user-container__image">
-
+                      <img class="main-image" src="${user.main_photo.photo.url}" />
                     </div>
                     <div class="user-container__profile">
                       <div class="user-container__profile__main">

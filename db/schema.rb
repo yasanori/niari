@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_16_104725) do
+ActiveRecord::Schema.define(version: 2020_04_16_035604) do
 
   create_table "entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -79,7 +79,9 @@ ActiveRecord::Schema.define(version: 2020_03_16_104725) do
     t.datetime "updated_at", null: false
     t.integer "camera_id", default: 2
     t.bigint "prefecture_id"
+    t.bigint "main_photo_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["main_photo_id"], name: "index_users_on_main_photo_id"
     t.index ["name"], name: "index_users_on_name", unique: true
     t.index ["prefecture_id"], name: "index_users_on_prefecture_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -90,5 +92,6 @@ ActiveRecord::Schema.define(version: 2020_03_16_104725) do
   add_foreign_key "memories", "users"
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "users", "memories", column: "main_photo_id"
   add_foreign_key "users", "prefectures"
 end
