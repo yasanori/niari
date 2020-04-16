@@ -342,7 +342,35 @@ $(document).on('turbolinks:load', function () {
         return user_image
       }
     };
-    function appendUserContainer(user, main_photo, user_image) {
+    function buildPrefecture(user) {
+      if (user.prefecture == null) {
+        var prefecture = ""
+        return prefecture
+      } else {
+        var prefecture =
+          `
+            <p class='user-prefecture'>
+              ${user.prefecture}
+            </p>
+          `
+        return prefecture
+      }
+    };
+    function buildProfile(user) {
+      if (user.profile == null) {
+        var profile = ""
+        return profile
+      } else {
+        var profile =
+          `
+            <p class='user-text'>
+              ${user.profile}
+            </p>
+          `
+        return profile
+      }
+    };
+    function appendUserContainer(user, main_photo, user_image, prefecture, profile) {
       var html =
         `
               <a class="user_link" href="/users/${user.id}">
@@ -362,15 +390,11 @@ $(document).on('turbolinks:load', function () {
                           </p>
                         </div>
                         <div class="user-container__profile__main__prefecture">
-                          <p class='user-prefecture'>
-
-                          </p>
+                          ${prefecture}
                         </div>
                       </div>
                       <div class="user-container__profile__text">
-                        <p class='user-text'>
-
-                        </p>
+                        ${profile}
                       </div>
                     </div>
                   </div>
@@ -399,7 +423,9 @@ $(document).on('turbolinks:load', function () {
               if (user.user_sign_in.id !== user.id) {
                 var main_photo = buildMainImage(user);
                 var user_image = buildUserImage(user);
-                appendUserContainer(user, main_photo, user_image);
+                var prefecture = buildPrefecture(user);
+                var profile = buildProfile(user);
+                appendUserContainer(user, main_photo, user_image, prefecture, profile);
               };
             });
           } else {
