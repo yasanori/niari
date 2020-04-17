@@ -8,7 +8,8 @@ class RoomsController < ApplicationController
     if @rooms.length != 0
       @rooms.each do |room|
         @user_room = {}
-        entry_list = Entry.where(room_id: room.id)
+        # entry_list = Entry.where(room_id: room.id)
+        entry_list = room.entries
         entry_list.each do |entry_user|
           if entry_user.user_id == current_user.id
           else
