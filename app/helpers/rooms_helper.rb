@@ -9,12 +9,12 @@ module RoomsHelper
     end
   end
 
-  # def opponent_user(room)
-  #   entories = room.entries
-  #   entries.each do |entry|
-  #    name = entry.user.name unless current_user.id == entry.user_id
-  #   end
-  #   tag.p name, class: "dm_list__content__link__box__name"
-  # end
+  def opponent_user(room)
+    entories = room.entries
+    entries.each do |entry|
+     name = entry.user.name unless current_user.id == entry.user_id
+    end
+    tag.p name, class: "dm_list__content__link__box__name"
+  end
 
 end
