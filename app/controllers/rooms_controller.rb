@@ -2,34 +2,7 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @rooms = current_user.rooms
-    @users_rooms = []
-
-    if @rooms.length != 0
-      @rooms.each do |room|
-        @user_room = {}
-        # entry_list = Entry.where(room_id: room.id)
-        entry_list = room.entries
-        entry_list.each do |entry_user|
-          if entry_user.user_id == current_user.id
-          else
-            @user_room[:user] = entry_user.user
-            @user_room[:room] = room
-            last_message = room.messages.order(updated_at: :desc).limit(1)
-            if last_message.present?
-              @user_room[:message] = last_message[0].text
-              @user_room[:time] = last_message[0].created_at
-            else
-              @user_room[:message] = "[ まだメッセージはありません ]"
-              @user_room[:time] = 0
-            end
-            @users_rooms <<  @user_room
-          end
-          @users_rooms.sort_by! { |a| a[:time] }.reverse!
-        end
-      end
-    end
-
+    @rooms = current_user.rooms.joins(:messages).includes(:messages).order("messages.created_at DESC")
   end
 
   def create

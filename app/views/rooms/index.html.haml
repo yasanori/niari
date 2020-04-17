@@ -2,12 +2,12 @@
   Direct Message List
 
 .dm_list
-  - @users_rooms.each do |user_room|
+  - @rooms.each do |room|
     .dm_list__content
-      = link_to room_path(user_room[:room]), class: "dm_list__content__link" do
+      = link_to room_path(room), class: "dm_list__content__link" do
         .dm_list__content__link__box
           %h3.dm_list__content__link__box__name
-            = user_room[:user].name
-            = new_message_badga(user_room[:room])
+            = opponent_user(room)
+            = new_message_badga(room)
           %p.dm_list__content__link__box__message
-            = user_room[:message]
+            = most_new_message_preview(room)
