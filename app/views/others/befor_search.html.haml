@@ -3,7 +3,11 @@
 
 .o_b
   .o_b__inner
-    .o_b__inner__name
-      = link_to "名前で検索", users_path, class: "o_b_link"
-    .o_b__inner__prefecture
-      = link_to "場所で検索", all_prefecture_users_searches_path, class: "o_b_link"
+    .o_b__inner__contents
+      = link_to users_path, class: "o_b__inner__contents__link" do
+        .o_b__inner__contents__link__content
+          = tag.p "名前で検索"
+    .o_b__inner__contents
+      = link_to all_prefecture_users_searches_path, class: "o_b__inner__contents__link" do
+        .o_b__inner__contents__link__content
+          = tag.p "場所で検索"

@@ -1,0 +1,13 @@
+%h2.heading
+  場所で検索
+
+= render partial: '/shared/prefecture_search_form'
+- if @users.present?
+  .user-contants
+    = render partial: 'shared/user', collection: @users
+  = paginate @users
+- else
+  = tag.div "その場所を拠点としている人はいませんでした", class: "name"
+  .user-contants
+    = render partial: 'shared/user', collection: @other_users
+  = paginate @other_users
