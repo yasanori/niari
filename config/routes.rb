@@ -15,7 +15,12 @@ Rails.application.routes.draw do
   root 'memories#index'
   resources :memories
   namespace :users do
-    resources :searches, only: :index
+    resources :searches, only: :index do
+      collection do
+        get "all_prefecture"
+        get "prefecture_search"
+      end
+    end
   end
 
   resources :users, only: [:index, :show, :edit, :update] do

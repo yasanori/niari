@@ -1,0 +1,7 @@
+%h2.heading
+  Photographer
+
+= render partial: '/shared/prefecture_search_form'
+.user-contants
+  = render partial: 'shared/user', collection: @users
+  = paginate @users
