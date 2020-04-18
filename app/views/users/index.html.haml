@@ -2,16 +2,6 @@
   Photographer
 
 = render partial: '/shared/search_form'
--# .camera_boxes
--#   - @users.each do |user|
--#     .camera_contents
--#       - if current_user.id != user.id
--#         = link_to user_path(user.id), class: "camera_link" do
--#           .camera_box
--#             .mini-prf-image-box
--#               = image_tag user.image.url, class: 'mini-prf-image'
--#             %p.camera_name
--#               = user.name
 .user-contants
   = render partial: 'shared/user', collection: @users
   = paginate @users
