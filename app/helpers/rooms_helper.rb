@@ -11,11 +11,9 @@ module RoomsHelper
   end
 
   def opponent_user(room)
-    entries = room.entries
-    entries.each do |entry|
-     @name = entry.user.name unless current_user.id == entry.user_id
-    end
-    tag.p "#{@name}", class: "dm_list__content__link__box__name"
+    entry = room.entries.where.not(user_id: current_user)
+    name = entry[0].user.name
+    tag.p "#{name}", class: "dm_list__content__link__box__name"
 
   end
 
