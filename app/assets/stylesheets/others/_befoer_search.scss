@@ -1,0 +1,35 @@
+.o_b {
+  width: 100%;
+  &__inner {
+    margin: 0 auto;
+    &__contents {
+      &__link {
+        display: inline-block;
+        text-decoration: none;
+          font-size: 1.6rem;
+          letter-spacing: 2px;
+          color: $defoult-font-color;
+        &__content {
+          width: 25rem;
+          padding: 2rem 3rem;
+          margin: 2rem auto;
+          background-color: $opacity-color;
+          border: 1px solid black;
+        }
+        &__content:hover {
+          background-color: $btn-hover-color;
+        }
+      }
+      &__link:hover {
+        color: $defoult-font-color;
+      }
+    }
+  }
+}
+
+
+// $image-shadow-color: gray;
+// $defoult-font-color: black;
+// $opacity-color: rgba(0, 0, 0, 0.1);
+// $btn-hover-color: rgba(233, 233, 233, 0.3);
+// $font-hover-color: rgba(0, 0, 0, 0.2);

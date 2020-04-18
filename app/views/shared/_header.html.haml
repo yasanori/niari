@@ -3,7 +3,7 @@
     %nav.navbar.navbar-expand.navbar-light
       .navbar__left
         = link_to "niari", root_path, class: 'navbar-brand'
-        = link_to "検索", users_path, class: 'search-gate'
+        = link_to "検索", befor_search_others_path, class: 'search-gate'
       #Navber
         - if user_signed_in?
           .nav-name-post

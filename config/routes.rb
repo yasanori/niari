@@ -15,7 +15,12 @@ Rails.application.routes.draw do
   root 'memories#index'
   resources :memories
   namespace :users do
-    resources :searches, only: :index
+    resources :searches, only: :index do
+      collection do
+        get "all_prefecture"
+        get "prefecture_search"
+      end
+    end
   end
 
   resources :users, only: [:index, :show, :edit, :update] do
@@ -25,6 +30,11 @@ Rails.application.routes.draw do
   end
   resources :rooms, only: [:index ,:create, :show]
   resources :messages, only: :create
+  resources :others, only: :index do
+    collection do
+      get "befor_search"
+    end
+  end
 
   put 'users/follow/:user_id' => 'users#follow'
   put 'users/unfollow/:user_id' => 'users#unfollow'
