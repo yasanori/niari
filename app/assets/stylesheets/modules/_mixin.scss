@@ -9,3 +9,9 @@ $font-hover-color: rgba(0, 0, 0, 0.2);
   color: $color;
   font-weight: $weight;
 }
+
+@mixin btn-color ($color: $defoult-font-color, $background-color: $opacity-color, $border: 1px solid $defoult-font-color){
+  color: $color;
+  background-color: $background-color;
+  border: $border;
+}
