@@ -73,6 +73,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+
   def check_guest
     if resource.email == 'guest@example.com'
       redirect_to root_path, alert: 'ゲストユーザーの変更・削除はできません。'
@@ -84,4 +85,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def configure_account_update_params
    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :image, :profile, :camera_id, :prefecture_id])
   end
+
+  # def configure_main_photo_params
+  #   devise_parameter_sanitizer.permit
+  # end
+
 end

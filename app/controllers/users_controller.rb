@@ -31,6 +31,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def change_main_photo
+    current_user.update(main_photo_id: params[:id])
+    redirect_to memory_path(params[:id])
+  end
+
+
   def colection
     @user = User.find(params[:id])
     @memories = @user.memories
@@ -55,5 +61,7 @@ class UsersController < ApplicationController
   def follower_list
     @user = User.find(params[:user_id])
   end
+
+  private
 
 end

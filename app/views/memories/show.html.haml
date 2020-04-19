@@ -7,3 +7,6 @@
   - if current_user.id == @memory.user_id
     .memory_delete
       = link_to "Delete", memory_path(@memory), method: :delete, class: "memory_delete__btn"
+    .change_main_photo
+      - if @memory.id != current_user.main_photo_id
+        = link_to "Main Photo?", change_main_photo_user_path(@memory), method: :patch, class: "memory_delete__btn"
