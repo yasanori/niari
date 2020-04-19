@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get 'profile_edit', to: 'users/registrations#profile_edit', as: 'profile_edit'
     patch 'profile_update', to: 'users/registrations#profile_update', as: 'profile_update'
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+    patch 'main_photo_update', to: 'users/registrations#main_photo_update', ad: 'main_photo_update'
   end
 
   root 'memories#index'
@@ -26,6 +27,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :edit, :update] do
     member do
       get 'colection'
+      patch 'change_main_photo'
     end
   end
   resources :rooms, only: [:index ,:create, :show]
