@@ -350,7 +350,7 @@ $(document).on('turbolinks:load', function () {
         var prefecture =
           `
             <p class='user-prefecture'>
-              ${user.prefecture}
+              ${user.prefecture.name}
             </p>
           `
         return prefecture

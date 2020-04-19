@@ -46,14 +46,19 @@
             }
           }
           &__name {
+            width: 45%;
             .user-name {
               font-size: 2.4rem;
               line-height: 5rem;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
             }
           }
           &__prefecture {
+              width: 30%;
             .user-prefecture {
-              font-size: 1.2rem;
+              font-size: 1rem;
               line-height: 5rem;
             }
           }
