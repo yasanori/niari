@@ -1,7 +1,8 @@
 # niari
 写真を撮ることが好きなアマチュアカメラマンと、旅行先や何かの記念として思い出を写真として残したい人などをつなげるアプリです。
 
-![nairi top](https://user-images.githubusercontent.com/38156084/78450951-47940180-76bd-11ea-9f82-5170d9bdf705.gif)
+![トップページ](https://user-images.githubusercontent.com/38156084/79716214-f9b00800-8310-11ea-9a83-5b11552f2975.gif)
+
 
 ## 開発経緯
 素敵な写真を撮ることができるアマチュアカメラマンの方が多くいらっしゃいます。
@@ -30,6 +31,8 @@ Ruby on Railsで制作したアプリとなります
 - DM機能
 - カメラマンとして登録することで検索対象となる
 - 名前、活動拠点でのカメラマン検索機能
+![ユーザー検索](https://user-images.githubusercontent.com/38156084/79716262-27954c80-8311-11ea-8b56-4fe4c70636eb.gif)
+
 ### 使用Gem
 - Devise
 - Carrierwave

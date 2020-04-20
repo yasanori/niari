@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, :only => [:index , :show, :follow, :unfollow]
 
   def index
-    @users = User.where(camera_id: 1).page(params[:page]).per(15)
+    @users = User.where(camera_id: 1).where.not(id: current_user).page(params[:page]).per(15)
   end
 
   def show
