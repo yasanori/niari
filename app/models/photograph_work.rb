@@ -1,0 +1,2 @@
+class PhotographWork < ApplicationRecord
+end
