@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_16_035604) do
+ActiveRecord::Schema.define(version: 2020_04_24_090757) do
 
   create_table "entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -92,6 +92,9 @@ ActiveRecord::Schema.define(version: 2020_04_16_035604) do
   add_foreign_key "memories", "users"
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "photograph_works", "prefectures"
+  add_foreign_key "photograph_works", "users", column: "photographer_id"
+  add_foreign_key "photograph_works", "users", column: "requester_id"
   add_foreign_key "users", "memories", column: "main_photo_id"
   add_foreign_key "users", "prefectures"
 end
