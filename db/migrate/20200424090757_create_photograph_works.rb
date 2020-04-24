@@ -4,7 +4,7 @@ class CreatePhotographWorks < ActiveRecord::Migration[5.2]
       t.references :photographer
       t.references :requester
       t.date :date, null: false
-      t.integer :prefecture
+      t.references :prefecture
       t.text :text, null: false
       t.integer :progress, default: 1
       t.timestamps
