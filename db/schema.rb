@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_24_090757) do
+ActiveRecord::Schema.define(version: 2020_04_24_103414) do
 
   create_table "entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -55,9 +55,19 @@ ActiveRecord::Schema.define(version: 2020_04_24_090757) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "photograph_requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "work_id"
+    t.bigint "requester_id"
+    t.text "text"
+    t.integer "approval", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["requester_id"], name: "index_photograph_requests_on_requester_id"
+    t.index ["work_id"], name: "index_photograph_requests_on_work_id"
+  end
+
   create_table "photograph_works", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "photographer_id"
-    t.bigint "requester_id"
     t.date "date", null: false
     t.bigint "prefecture_id"
     t.text "text", null: false
@@ -66,7 +76,6 @@ ActiveRecord::Schema.define(version: 2020_04_24_090757) do
     t.datetime "updated_at", null: false
     t.index ["photographer_id"], name: "index_photograph_works_on_photographer_id"
     t.index ["prefecture_id"], name: "index_photograph_works_on_prefecture_id"
-    t.index ["requester_id"], name: "index_photograph_works_on_requester_id"
   end
 
   create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -106,9 +115,10 @@ ActiveRecord::Schema.define(version: 2020_04_24_090757) do
   add_foreign_key "memories", "users"
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "photograph_requests", "photograph_works", column: "work_id"
+  add_foreign_key "photograph_requests", "users", column: "requester_id"
   add_foreign_key "photograph_works", "prefectures"
   add_foreign_key "photograph_works", "users", column: "photographer_id"
-  add_foreign_key "photograph_works", "users", column: "requester_id"
   add_foreign_key "users", "memories", column: "main_photo_id"
   add_foreign_key "users", "prefectures"
 end
