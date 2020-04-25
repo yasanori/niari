@@ -13,6 +13,7 @@
                 %ul.my-lists><
                   %li.my-list><
                     = link_to "マイページ", user_path(current_user)
+                    = link_to "仕事登録", new_photograph_work_path
                     = link_to "DM", rooms_path, class: "new_message"
                     = all_new_message_badga
                     = link_to 'プロフィール編集', profile_edit_path
