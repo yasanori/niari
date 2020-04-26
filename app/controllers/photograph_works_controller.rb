@@ -1,5 +1,9 @@
 class PhotographWorksController < ApplicationController
 
+  def index
+    @works = PhotographWork.includes(:photographer)
+  end
+
   def new
     @work = PhotographWork.new
   end

@@ -1,0 +1,20 @@
+= link_to photograph_work_path(photograph_work.id), class: "user_link" do
+  .user-wrapper
+    .user-container
+      .user-container__image
+        - if photograph_work.photographer.main_photo_id
+          = image_tag photograph_work.photographer.main_photo.photo.url, class: 'main-image'
+      .user-container__profile
+        .user-container__profile__main
+          .user-container__profile__main__image
+            = image_tag photograph_work.photographer.image.url , alt: 'ユーザー', class: 'mini-prf-image'
+          .user-container__profile__main__name
+            %p.user-name
+              = photograph_work.photographer.name
+          .user-container__profile__main__prefecture
+            - if photograph_work.prefecture.present?
+              %p.user-prefecture
+                = photograph_work.prefecture.name
+        .user-container__profile__text
+          %p.user-text
+            = photograph_work.text
