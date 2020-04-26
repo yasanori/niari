@@ -2,14 +2,15 @@
   New Work
 = form_with(model: @work, local: true) do |f|
   .form-wrapper
-    .form-group.herf
-      = tag.h3 "日付", class: "form-name"
-      = f.date_select :date, use_month_numbers: true,start_year: (Time.now.year), end_year: (Time.now.year+1), selected:Time.now, class: "form-content"
-    .form-group.herf
-      = tag.h3 "場所", class: "form-name"
-      = f.collection_select :prefecture_id, Prefecture.all, :id, :name, class: "form-content"
-    .form-group
-      = tag.h3 "説明", class: "form-name"
-      = f.text_area :text, lows: "50",cols: "8", placeholder: "説明", class: 'form-content text-area'
-    .form-submit
-      = f.submit "登録する", class: "submit-btn"
+    .form-contents
+      .form-group.herf
+        = tag.h3 "日付", class: "form-name"
+        = f.date_select :date, {use_month_numbers: true,start_year: (Time.now.year), end_year: (Time.now.year+1), selected:Time.now}, class: "form-content--herf"
+      .form-group.herf
+        = tag.h3 "場所", class: "form-name"
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, class: "form-content--herf"
+      .form-group
+        = tag.h3 "説明", class: "form-name"
+        = f.text_area :text, lows: "50",cols: "8", placeholder: "説明", class: 'form-content text-area'
+      .form-submit
+        = f.submit "登録する", class: "submit-btn"
