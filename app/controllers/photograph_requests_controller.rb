@@ -1,0 +1,2 @@
+class PhotographRequestsController < ApplicationController
+end

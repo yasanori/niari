@@ -1,0 +1,41 @@
+.form-wrapper {
+  .form-contents {
+    padding: 2rem;
+    margin: 0 auto;
+    .form-group {
+      width: 70%;
+      padding: 1rem;
+      margin: 0 auto;
+      .form-name {
+
+      }
+      .form-content {
+
+      }
+      .form-content--herf {
+        height: 3rem;
+      }
+      .form-content.text-area {
+        width: 100%;
+        height: 7rem;
+      }
+    }
+    .form-group.herf {
+      width: 35%;
+      margin: 0 auto;
+    }
+    .form-submit {
+      width: 100%;
+      padding: 1rem;
+      .submit-btn {
+        border: 1px solid $defoult-font-color;
+        background: $opacity-color;
+        padding: 1rem;
+        width: 20%;
+      }
+      .submit-btn:hover {
+        background: $btn-hover-color;
+      }
+    }
+  }
+}
