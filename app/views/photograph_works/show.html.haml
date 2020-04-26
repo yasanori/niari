@@ -1,0 +1,15 @@
+.work-show
+  .work-show__inner
+    .work-show__inner__image
+      .work-show__inner__image__contents
+        = image_tag @work.photographer.main_photo.photo.url
+    .work-show__inner__names
+      .work-show__inner__names__name
+        = tag.p @work.photographer.name
+      .work-show__inner__names__days
+        = tag.p @work.date
+        = tag.p @work.prefecture.name
+    .work-show__inner__text
+      .work-show__inner__text__content
+        = tag.p "#{@work.text}"
+    .work-show__inner__btns

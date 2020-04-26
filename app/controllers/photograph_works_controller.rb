@@ -4,6 +4,10 @@ class PhotographWorksController < ApplicationController
     @works = PhotographWork.includes(:photographer)
   end
 
+  def show
+    @work = PhotographWork.find(params[:id])
+  end
+
   def new
     @work = PhotographWork.new
   end
