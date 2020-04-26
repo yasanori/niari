@@ -2,14 +2,17 @@
   .work-show__inner
     .work-show__inner__image
       .work-show__inner__image__contents
-        = image_tag @work.photographer.main_photo.photo.url
+        = image_tag @work.photographer.main_photo.photo.url, class: "work-show__inner__image__contents__content"
     .work-show__inner__names
       .work-show__inner__names__name
-        = tag.p @work.photographer.name
+        = link_to user_path(@work), class: "user-link" do
+          = tag.p @work.photographer.name, class: "user-link__name"
       .work-show__inner__names__days
-        = tag.p @work.date
-        = tag.p @work.prefecture.name
+        = tag.p @work.date, class: "work-dates"
+        = tag.p @work.prefecture.name, class: "work-dates"
     .work-show__inner__text
       .work-show__inner__text__content
-        = tag.p "#{@work.text}"
+        = tag.p "#{@work.text}", class: "work-text"
     .work-show__inner__btns
+      = link_to "申請", photograph_work_path(@work), class: "work-btn"
+      = link_to "戻る", :back, class: "work-btn"

@@ -1,0 +1,70 @@
+.work-show {
+  &__inner {
+    width: 50%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 2rem;
+    &__image {
+      width: 100%;
+      &__contents {
+        width: 100%;
+        &__content {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
+    &__names {
+      &__name {
+        padding: 1.5rem;
+        text-align: center;
+        .user-link {
+          text-decoration: none;
+          display: inline-block;
+          &__name {
+            color: $defoult-font-color;
+            font-size: 3rem;
+            letter-spacing: 1.5px;
+            margin: 0;
+          }
+          &__name:hover {
+            color: $font-hover-color;
+          }
+        }
+      }
+      &__days {
+        display: flex;
+        justify-content: center;
+        .work-dates {
+          margin: 0 1.5rem;
+          font-size: 1.5rem;
+        }
+      }
+    }
+    &__text {
+      &__content {
+        width: 60%;
+        margin: 0 auto;
+        border: 1px solid $defoult-font-color;
+        padding: 2rem;
+        .work-text {
+
+        }
+      }
+    }
+    &__btns {
+      padding: 2.5rem 1rem;
+      .work-btn {
+        color: $defoult-font-color;
+        border: 1px solid $defoult-font-color;
+        padding: 1rem;
+        text-decoration: none;
+        letter-spacing: 1px;
+        background-color: $opacity-color;
+      }
+      .work-btn:hover {
+        background: $btn-hover-color;
+      }
+    }
+  }
+}
