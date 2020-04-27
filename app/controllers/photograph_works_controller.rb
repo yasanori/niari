@@ -21,6 +21,12 @@ class PhotographWorksController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    @work = PhotographWork.find(params[:id])
+    @work.delete
+    redirect_to root_path
+  end
+
   private
   def photograph_work_params
     params.require(:photograph_work).permit(:date, :prefecture_id, :text,).merge(photographer_id: current_user.id)
