@@ -79,13 +79,23 @@
   padding: 0 0 1.5rem;
   .search-form {
     margin: 1rem auto;
+    padding-bottom: 1rem;
     display: inline-block;
-    height: 3rem;
+    height: 4rem;
+    border-bottom: 1px solid #000000;
     .search-date {
       height: 100%;
+      cursor: pointer;
     }
     .search_select {
       height: 100%;
+      cursor: pointer;
+    }
+    .search-date:focus {
+      outline: none;
+    }
+    .search_select:focus {
+      outline: none;
     }
     .search-btn {
       width: 8rem;
