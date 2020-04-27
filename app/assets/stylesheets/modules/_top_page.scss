@@ -1,11 +1,10 @@
 
 .site_title {
-  font-size: 12rem;
+  font-size: 8rem;
   text-shadow:  5px 5px 1rem #000000;
   letter-spacing: 3px;
-  margin-bottom: 100px;
+  margin-bottom: 6rem;
   color: white;
-  display: inline-block;
 }
 
 .work-search-form {
@@ -73,6 +72,31 @@
 .top_page ul {
     display: inline-block;
     overflow: hidden;
+}
+
+.work-search-form {
+  margin: 0 auto;
+  padding: 0 0 1.5rem;
+  .search-form {
+    margin: 1rem auto;
+    display: inline-block;
+    height: 3rem;
+    .search-date {
+      height: 100%;
+    }
+    .search_select {
+      height: 100%;
+    }
+    .search-btn {
+      width: 8rem;
+      background: $opacity-color;
+      color: $defoult-font-color;
+      border: 1px solid $defoult-font-color;
+    }
+    .search-btn:hover {
+      background: $btn-hover-color;
+    }
+  }
 }
 
 
