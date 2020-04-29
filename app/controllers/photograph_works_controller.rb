@@ -4,6 +4,14 @@ class PhotographWorksController < ApplicationController
     @works = PhotographWork.includes(:photographer)
   end
 
+  def search
+    if params[:prefecture].present?
+      @works = PhotographWork.where(prefecture_id: params[:prefecture]).where(date: params["date(1i)"] + "-" + params["date(2i)"] + "-" + params["date(3i)"])
+    else
+      redirect_to root_path
+    end
+  end
+
   def show
     @work = PhotographWork.find(params[:id])
   end
