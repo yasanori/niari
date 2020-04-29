@@ -1,5 +1,10 @@
 %h1.site_title
   niari
+.work-search-form
+  = form_with(url: search_photograph_works_path, local: true, method: :get, class: "search-form") do |f|
+    = f.date_select :date, {use_month_numbers: true, date_separator: ' / ',start_year: (Time.now.year), end_year: (Time.now.year+1), selected:Time.now}, class: "search-date"
+    = f.collection_select :prefecture, Prefecture.all, :id, :name,{ include_blank: ' 都道府県 '}, class: "search_select"
+    = f.submit "検索", class: "search-btn"
 .top_page
   %ul.loop_slider
     - @memories.each do |memory|

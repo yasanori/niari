@@ -1,10 +1,14 @@
 
 .site_title {
-  font-size: 12rem;
+  font-size: 8rem;
   text-shadow:  5px 5px 1rem #000000;
   letter-spacing: 3px;
-  margin-bottom: 100px;
+  margin-bottom: 5rem;
   color: white;
+}
+
+.work-search-form {
+  display: inline-block;
 }
 
 .top_page {
@@ -68,6 +72,41 @@
 .top_page ul {
     display: inline-block;
     overflow: hidden;
+}
+
+.work-search-form {
+  margin: 0 auto;
+  padding: 0 0 1.5rem;
+  .search-form {
+    margin: 1rem auto;
+    padding-bottom: 1rem;
+    display: inline-block;
+    height: 4rem;
+    border-bottom: 1px solid #000000;
+    .search-date {
+      height: 100%;
+      cursor: pointer;
+    }
+    .search_select {
+      height: 100%;
+      cursor: pointer;
+    }
+    .search-date:focus {
+      outline: none;
+    }
+    .search_select:focus {
+      outline: none;
+    }
+    .search-btn {
+      width: 8rem;
+      background: $opacity-color;
+      color: $defoult-font-color;
+      border: 1px solid $defoult-font-color;
+    }
+    .search-btn:hover {
+      background: $btn-hover-color;
+    }
+  }
 }
 
 

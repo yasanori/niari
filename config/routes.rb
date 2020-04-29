@@ -32,7 +32,11 @@ Rails.application.routes.draw do
   end
   resources :rooms, only: [:index ,:create, :show]
   resources :messages, only: :create
-  resources :photograph_works
+  resources :photograph_works do
+    collection do
+      get "search"
+    end
+  end
   resources :others, only: :index do
     collection do
       get "befor_search"
