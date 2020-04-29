@@ -1,5 +1,5 @@
 %h2.heading
   カメラマン一覧
 .user-contants
-  = if @works.present?
+  - if @works.present?
     = render partial: 'shared/photograph_work', collection: @works
