@@ -4,6 +4,12 @@ RSpec.describe User, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
 
   describe '#create' do
+
+    it "name, email, passwordがあれば登録できること" do
+      user = build(:user)
+      expect(user).to be_valid
+    end
+
     it "nameがない場合は登録できないこと" do
      user = build(:user, name: "")
      user.valid?
@@ -16,10 +22,29 @@ RSpec.describe User, type: :model do
       expect(user.errors[:email]).to include("を入力してください")
     end
 
-    it "パスワードがない場合は登録ができないこと" do
+    it "passwordがない場合は登録ができないこと" do
       user = build(:user, password: "")
       user.valid?
       expect(user.errors[:password]).to include("を入力してください")
+    end
+
+    it "passwordが5文字以下であると登録できないこと" do
+      user = build(:user, password: "aaaaa", password_confirmation: "aaaaa")
+      user.valid?
+      expect(user.errors[:password]).to include("は6文字以上で入力してください")
+    end
+
+    it "passwordが存在してもpassword_confirmationがない場合は登録できないこと" do
+      user = build(:user, password_confirmation: "")
+      user.valid?
+      expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
+    end
+
+    it "重複したemailが存在する場合登録できないこと" do
+      user = create(:user)
+      another_user = build(:user, email: user.email)
+      another_user.valid?
+      expect(another_user.errors[:email]).to include("はすでに存在します")
     end
 
   end
