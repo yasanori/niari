@@ -28,6 +28,12 @@ RSpec.describe User, type: :model do
       expect(user.errors[:password]).to include("を入力してください")
     end
 
+    it "passwordが5文字以下であると登録できないこと" do
+      user = build(:user, password: "aaaaa", password_confirmation: "aaaaa")
+      user.valid?
+      expect(user.errors[:password]).to include("は6文字以上で入力してください")
+    end
+
     it "passwordが存在してもpassword_confirmationがない場合は登録できないこと" do
       user = build(:user, password_confirmation: "")
       user.valid?
